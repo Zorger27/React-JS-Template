@@ -97,15 +97,11 @@
             font-size: 2rem;
             margin: 0.8rem;
           }
-          .tech-list {
-            gap: 0.8rem;
-            margin: 0 2.5rem 2.5rem;
-
-            li {
-              padding: 0.7rem 1rem;
-              border-radius: 20px;
-              font-size: 0.8rem;
-              font-weight: 500;
+          .card-info {
+            padding: 0.8rem;
+            .card-link {
+              padding: 0.8rem;
+              font-size: 1rem;
             }
           }
         }
@@ -135,15 +131,11 @@
             font-size: 1.9rem;
             margin: 0.7rem;
           }
-          .tech-list {
-            gap: 0.6rem;
-            margin: 0 2rem 2rem;
-
-            li {
-              padding: 0.7rem 1rem;
-              border-radius: 20px;
+          .card-info {
+            padding: 0.6rem;
+            .card-link {
               font-size: 0.8rem;
-              font-weight: 500;
+              padding: 0.6rem;
             }
           }
         }

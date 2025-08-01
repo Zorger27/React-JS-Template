@@ -1,5 +1,3 @@
-// src/store/index.js
-
 import { configureStore } from '@reduxjs/toolkit';
 import infoReducer from '@/store/info/infoSlice.js';
 
