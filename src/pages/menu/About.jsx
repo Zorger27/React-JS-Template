@@ -12,9 +12,11 @@ export const About = () => {
   return (
     <div className="about">
       <div className="container">
-        <h1 className="main">
-          {t('about.title')}{' '}
-          <i onClick={() => setTableView(!tableView)}><span className={`fa ${tableView ? 'fa-list' : 'fa-th'}`}></span></i>
+        <h1>
+          {t('about.title')}
+          <i onClick={() => setTableView(!tableView)}>
+            <span className={`fa ${tableView ? 'fa-list' : 'fa-th'}`}></span>
+          </i>
         </h1>
 
         <div className="about-content">

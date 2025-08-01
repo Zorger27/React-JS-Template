@@ -7,11 +7,7 @@
   background-repeat: no-repeat;
 
   .container {
-    .main {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
+    h1 {
       font-size: 2.5rem;
       margin: 0.7rem auto;
       color: mediumvioletred;
@@ -25,6 +21,7 @@
           cursor: pointer;
           border-bottom: 1px solid transparent;
           margin: 0.5rem;
+          font-size: 2.4rem;
         }
 
         .more:hover,
@@ -113,7 +110,7 @@
 
       .about-content {
         .about-description {
-          .more {margin: 0.5rem;}
+          .more {margin: 0.5rem; font-size: 2rem;}
 
           h3 {margin: 0.5rem}
           p {margin: 0 1rem;}
@@ -144,13 +141,13 @@
   .about {
     .container {
       h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
         margin: 0.6rem auto;
       }
 
       .about-content {
         .about-description {
-          .more {margin: 0.3rem 0 0.5rem;}
+          .more {margin: 0.3rem 0 0.5rem; font-size: 1.7rem;}
 
           h3 {margin: 0.2rem}
           p {margin: 0 0.5rem 0.2rem;}
@@ -158,7 +155,7 @@
 
         .about-tech {
           .tech-title{
-            font-size: 1.9rem;
+            font-size: 1.7rem;
             margin: 0.7rem;
           }
           .card-info {
@@ -168,7 +165,7 @@
           .table {
             font-size: 1.4rem;
             padding: 0;
-            margin: 0.5rem auto 0.8rem;
+            margin: 0.5rem 0.5rem 0.8rem;
             border: none;
             border-radius: unset;
             tr, td, th {padding: 0.3rem;}
