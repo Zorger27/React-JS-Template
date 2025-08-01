@@ -54,6 +54,7 @@
   },
   "extra": {
     "loading": "sobreprima...",
+    "detail": "Para más detalles ver aquí ⇢",
     "back": "Volver a la página principal",
     "tableView": "Vista de tabla",
     "listView": "Vista de lista",

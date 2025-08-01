@@ -36,7 +36,7 @@ export const About = () => {
 
             {infoList.map((info) => (
               <div className="card-info" key={info.id}>
-                <a className="card-link" href={info.url} target="_blank" rel="noopener noreferrer" title="In more detail...">
+                <a className="card-link" href={info.url} target="_blank" rel="noopener noreferrer" title={t('extra.detail')}>
                   <h3>
                     <span style={{ color: 'black' }}>{info.id}.</span>{' '}
                     <span>{info.title}</span>{' '}

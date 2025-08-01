@@ -54,6 +54,7 @@
   },
   "extra": {
     "loading": "loading...",
+    "detail": "For more details see here ⇢",
     "back": "Return to the main page",
     "tableView": "Table view",
     "listView": "List view",
