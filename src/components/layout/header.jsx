@@ -29,14 +29,14 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="burger-menu" ref={burgerRef} onClick={toggleMenu}>
-        <i className={`fa ${showMenu ? 'fa-times' : 'fa-bars'} burger-menu-icon`} />
-      </div>
-
       <div className="header-img">
+        <div className="burger-menu" ref={burgerRef} onClick={toggleMenu}>
+          <i className={`fa ${showMenu ? 'fa-times' : 'fa-bars'} burger-menu-icon`} />
+        </div>
+
         <div className="logo">
           <Link to="/">
-            <img src="/src/assets/logos/lis-blue.svg" alt="Логотип" className="logo" title={t('header.headerImage')}/>
+            <img src="/src/assets/logos/lis-green.webp" alt="Логотип" className="logo" title={t('header.headerImage')}/>
           </Link>
         </div>
 
