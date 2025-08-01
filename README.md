@@ -2,7 +2,7 @@
 ### You can view my CV here: [Curriculum VITAE](https://zorger27.github.io)❗️ ###
 ### You can view my Portfolio here: [My Portfolio](https://Zorin.Expert)❗️ ###
 
-<img width="1446" height="825" alt="about" src="https://github.com/user-attachments/assets/32eee396-af68-4b5f-8afe-2d56cc5d9f50" />
+<img width="1446" alt="about" src="https://github.com/user-attachments/assets/32eee396-af68-4b5f-8afe-2d56cc5d9f50" />
 
 #### ✨ React Vite PWA Template 🖌️ ####
 
