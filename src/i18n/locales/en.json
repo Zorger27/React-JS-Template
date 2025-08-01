@@ -1,0 +1,70 @@
+{
+  "language": {
+    "en": "English",
+    "uk": "Ukrainian",
+    "es": "Spanish"
+  },
+  "header": {
+    "headerImage": "Main menu! \uD83D\uDE0D",
+    "prg01": "Project-1",
+    "prg02": "Project-2",
+    "prg03": "Project-3",
+    "about": "About"
+  },
+  "footer": {
+    "develop": "Developed by ",
+    "zorger": "Zorger",
+    "point": ".",
+    "rights": "All rights reserved",
+    "linkCV": "Brief Curriculum Vitae",
+    "footerLogo": "Link to My Portfolio! \uD83D\uDE09",
+    "socialSharing": {
+      "shareOnFacebook": "Share on Facebook",
+      "tweetOnExTwitter": "Share on X (ex-Twitter)",
+      "shareOnLinkedIn": "Share on LinkedIn",
+      "shareLink": "Share this Page"
+    }
+  },
+  "home": {
+    "title": "Welcome!",
+    "description": "Here are my React projects and information about them. \uD83D\uDE09"
+  },
+  "project1": {
+    "name": "Project № 1",
+    "disc": "Brief description of the first project"
+  },
+  "project2": {
+    "name": "Project № 2",
+    "disc": "Brief description of the second project"
+  },
+  "project3": {
+    "name": "Project № 3",
+    "disc": "Brief description of the third project"
+  },
+  "about": {
+    "title": "My JavaScript projects on React",
+    "more01": "More information...",
+    "more02": "\uD83C\uDF10 A convenient and flexible starter template for building modern single-page applications (SPA), powered by a cutting-edge tech stack (React 19).",
+    "more03": "✨ This minimalist yet fully functional site supports three languages (Ukrainian, English, and Spanish) and is perfectly responsive across all devices — from smartphones to desktops. It comes with offline support (PWA) and fast loading, delivering excellent performance even on slow networks.\n\n\uD83D\uDCCA The template is pre-configured for Google Analytics and Google Search Console integration, making performance tracking and analysis easy.",
+    "more04": "\uD83D\uDE80 With its intuitive structure and flexible codebase, this template is ideal for both rapid project launches and the development of complex web applications! \uD83C\uDF1F",
+    "more05": "Welcome! \uD83E\uDD29\uD83D\uDE0E",
+    "technologies": "Technologies",
+    "name": "Name",
+    "version": "Version"
+  },
+  "extra": {
+    "loading": "loading...",
+    "back": "Return to the main page",
+    "tableView": "Table view",
+    "listView": "List view",
+    "openSearch": "Show SEARCH window",
+    "closeSearch": "Close SEARCH window",
+    "ascOrder": "Sort by ascending",
+    "desOrder": "Sort by descending",
+    "closeFooter": "Hide footer",
+    "openFooter": "Show footer",
+    "fullScreenView": "Canvas Full Screen",
+    "toggleFullScreen": "Document Full Screen",
+    "closeFullScreen": "Close full-screen document mode"
+  }
+}
