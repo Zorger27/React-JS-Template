@@ -1,5 +1,5 @@
 # React (JavaScript) & Vite PWA Template #
-[![Use this template](https://img.shields.io/badge/Use%20this%20template-darkgreen?style=for-the-badge)](https://github.com/Zorger27/React-JS-Template/generate)
+[![Use this template](https://img.shields.io/badge/Use%20this%20template-darkred?style=for-the-badge)](https://github.com/Zorger27/React-JS-Template/generate)
 ### You can view my CV here: [Curriculum VITAE](https://zorger27.github.io)❗️ ###
 ### You can view my Portfolio here: [My Portfolio](https://Zorin.Expert)❗️ ###
 
