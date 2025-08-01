@@ -5,6 +5,11 @@ import '@/index.scss';
 import '@/assets/style/fontawesome-free-6.5.1/css/all.min.css';
 import '@/i18n';
 
+import { Provider } from 'react-redux';
+import store from '@/store';
+
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <App />
+  <Provider store={store}>
+    <App />
+  </Provider>
 );

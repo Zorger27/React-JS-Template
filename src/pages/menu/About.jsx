@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import '@/pages/menu/About.scss';
 
 export const About = () => {
   const { t } = useTranslation();
   const [showMore, setShowMore] = useState(false);
+  const infoList = useSelector((state) => state.info); // ← доступ к store
+
   return (
     <div className="about">
       <div className="container">
@@ -30,14 +33,18 @@ export const About = () => {
 
           <section className="about-tech">
             <h2 className="tech-title">{t('about.technologies')}</h2>
-            <ul className="tech-list">
-              <li>React 19</li>
-              <li>Vite</li>
-              <li>SCSS</li>
-              <li>PWA (Progressive Web App)</li>
-              <li>React Router</li>
-              <li>Workbox</li>
-            </ul>
+
+            {infoList.map((info) => (
+              <div className="card-info" key={info.id}>
+                <a className="card-link" href={info.url} target="_blank" rel="noopener noreferrer" title="In more detail...">
+                  <h3>
+                    <span style={{ color: 'black' }}>{info.id}.</span>{' '}
+                    <span>{info.title}</span>{' '}
+                    <span style={{ color: 'red' }}>{info.version ? `v.${info.version}` : ''}</span>
+                  </h3>
+                </a>
+              </div>
+            ))}
           </section>
         </div>
       </div>
