@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import '@/pages/menu/About.scss';
 
 export const About = () => {
   const { t } = useTranslation();
+  const [showMore, setShowMore] = useState(false);
   return (
     <div className="about">
       <div className="container">
@@ -11,11 +12,19 @@ export const About = () => {
         <div className="about-content">
           <section className="about-description">
             <line></line>
-            <h2 className="more">{t('about.more01')}</h2>
-            <p>{t('about.more02')}</p>
-            <p>{t('about.more03')}</p>
-            <p>{t('about.more04')}</p>
-            <h3>{t('about.more05')}</h3>
+            <h2 className="more" onClick={() => setShowMore(!showMore)}>
+              {t('about.more01')}
+              {/*<i className="fas fa-hand-pointer" style={{ color: 'red', marginLeft: '0.5rem' }}/>*/}
+              <i className="fas fa-hand-pointer"/>
+            </h2>
+            { showMore && (
+              <>
+                <p>{t('about.more02')}</p>
+                <p>{t('about.more03')}</p>
+                <p>{t('about.more04')}</p>
+                <h3>{t('about.more05')}</h3>
+              </>
+            )}
             <line></line>
           </section>
 
