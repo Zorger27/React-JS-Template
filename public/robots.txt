@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+// Sitemap: https://couture-metaverse.vercel.app/sitemap.xml
