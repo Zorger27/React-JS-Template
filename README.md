@@ -3,7 +3,7 @@
 ### You can view my CV here: [Curriculum VITAE](https://zorger27.github.io)❗️ ###
 ### You can view my Portfolio here: [My Portfolio](https://Zorin.Expert)❗️ ###
 
-<img width="1680" height="854" alt="about" src="https://github.com/user-attachments/assets/2bf3eb8b-2689-444d-9c39-71f17c736d02" />
+<img width="1680" alt="about" src="https://github.com/user-attachments/assets/2bf3eb8b-2689-444d-9c39-71f17c736d02" />
 
 #### 🌐 A convenient and flexible starter template for building modern single-page applications (SPA), powered by a cutting-edge tech stack (React 19). ####
 
