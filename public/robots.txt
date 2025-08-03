@@ -1,15 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /sw.js
-Disallow: /workbox-*
-Disallow: /*.map
-Disallow: /manifest.json
 
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-Crawl-delay: 1
 Sitemap: https://react-js-template.vercel.app/sitemap.xml

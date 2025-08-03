@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import footerLogo from '@/assets/logos/zorger2.svg';
+import footerLogo from '@/assets/img/menu1/footer-logo1.svg';
 import '@/components/layout/footer.scss';
 
 const Footer = () => {

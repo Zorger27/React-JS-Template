@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '@/assets/logos/lis-green.webp';
+import headerLogo from '@/assets/img/menu1/header-logo1.svg';
 import './header.scss';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '@/components/util/LanguageSwitcher.jsx'
@@ -37,7 +37,7 @@ const Header = () => {
 
         <div className="logo">
           <Link to="/">
-            <img src={logo} alt="Логотип" className="logo" title={t('header.headerImage')}/>
+            <img src={headerLogo} alt="Логотип" className="logo" title={t('header.headerImage')}/>
           </Link>
         </div>
 

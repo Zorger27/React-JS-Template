@@ -66,6 +66,8 @@
     "openFooter": "Mostrar pie de página",
     "fullScreenView": "Lienzo en pantalla completa",
     "toggleFullScreen": "Documento en pantalla completa",
-    "closeFullScreen": "Cerrar el modo de documento de pantalla completa"
+    "closeFullScreen": "Cerrar el modo de documento de pantalla completa",
+    "info404": "Página no encontrada, volver a la página principal",
+    "btn404": "Volver a la página PRINCIPAL"
   }
 }

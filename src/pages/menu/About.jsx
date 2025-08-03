@@ -14,7 +14,10 @@ export const About = () => {
       <div className="container">
         <h1>
           {t('about.title')}
-          <i onClick={() => setTableView(!tableView)}>
+          <i
+            onClick={() => setTableView(!tableView)}
+            title={tableView ? t('extra.listView') : t('extra.tableView')}
+          >
             <span className={`fa ${tableView ? 'fa-list' : 'fa-th'}`}></span>
           </i>
         </h1>
