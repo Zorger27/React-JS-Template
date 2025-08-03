@@ -36,7 +36,7 @@ const Header = () => {
 
         <div className="logo">
           <Link to="/">
-            <img src="/src/assets/logos/lis-green.webp" alt="Логотип" className="logo" title={t('header.headerImage')}/>
+            <img src="@/assets/logos/lis-green.webp" alt="Логотип" className="logo" title={t('header.headerImage')}/>
           </Link>
         </div>
 
