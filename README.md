@@ -3,8 +3,6 @@
 ### You can view my CV here: [Curriculum VITAE](https://zorger27.github.io)❗️ ###
 ### You can view my Portfolio here: [My Portfolio](https://Zorin.Expert)❗️ ###
 
-<img width="1446" alt="about" src="https://github.com/user-attachments/assets/32eee396-af68-4b5f-8afe-2d56cc5d9f50" />
-
 #### 🌐 A convenient and flexible starter template for building modern single-page applications (SPA), powered by a cutting-edge tech stack (React 19). ####
 
 ✨ This minimalist yet fully functional site supports three languages (Ukrainian, English, and Spanish) and is perfectly responsive across all devices — from smartphones to desktops.
