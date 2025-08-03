@@ -1,3 +1,15 @@
 User-agent: *
-Disallow:
-// Sitemap: https://couture-metaverse.vercel.app/sitemap.xml
+Allow: /
+Disallow: /sw.js
+Disallow: /workbox-*
+Disallow: /*.map
+Disallow: /manifest.json
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Crawl-delay: 1
+Sitemap: https://your-site.vercel.app/sitemap.xml

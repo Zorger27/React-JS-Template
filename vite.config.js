@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
+import Sitemap from 'vite-plugin-sitemap';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -52,7 +53,18 @@ export default defineConfig({
           }
         ]
       }
-    })
+    }),
+    Sitemap({
+      hostname: 'https://your-site.vercel.app',
+      dynamicRoutes: [
+        '/',
+        '/about',
+        '/project1',
+        '/project2',
+        '/project3'
+      ],
+      readable: true,        // Форматированный XML
+    }),
   ],
   resolve: {
     alias: {
