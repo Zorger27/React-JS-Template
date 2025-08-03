@@ -11,13 +11,14 @@ const __dirname = path.dirname(__filename);
 export default defineConfig({
   plugins: [
     react(),
+    // Сначала PWA (копирует файлы)
     VitePWA({
       registerType: 'autoUpdate',
       devOptions: {
         enabled: false
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg}']
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,txt}'] // добавили txt
       },
       includeAssets: [
         'favicon.png',
@@ -54,6 +55,7 @@ export default defineConfig({
         ]
       }
     }),
+    // Потом Sitemap (когда robots.txt уже есть)
     Sitemap({
       hostname: 'https://your-site.vercel.app',
       dynamicRoutes: [
@@ -63,8 +65,8 @@ export default defineConfig({
         '/project2',
         '/project3'
       ],
-      readable: true,        // Форматированный XML
-    }),
+      readable: true
+    })
   ],
   resolve: {
     alias: {
