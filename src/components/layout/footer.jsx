@@ -1,13 +1,12 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import footerLogo from '@/assets/logos/zorger2.svg';
 import '@/components/layout/footer.scss';
 
 const Footer = () => {
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
   const progYear = 2025;
-
-  const footerLogo = '@/assets/logos/zorger2.svg';
 
   const navigateToPortfolio = () => {
     window.open('https://zorin.expert', '_blank');
