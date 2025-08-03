@@ -57,7 +57,7 @@ export default defineConfig({
     }),
     // Потом Sitemap (когда robots.txt уже есть)
     Sitemap({
-      hostname: 'https://your-site.vercel.app',
+      hostname: 'https://react-js-template.vercel.app',
       dynamicRoutes: [
         '/',
         '/about',

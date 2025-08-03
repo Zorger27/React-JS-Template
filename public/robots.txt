@@ -12,4 +12,4 @@ User-agent: Bingbot
 Allow: /
 
 Crawl-delay: 1
-Sitemap: https://your-site.vercel.app/sitemap.xml
+Sitemap: https://react-js-template.vercel.app/sitemap.xml
