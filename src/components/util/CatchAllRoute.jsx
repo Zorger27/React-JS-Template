@@ -1,9 +1,10 @@
-import React from 'react';
+// components/routing/CatchAllRoute.jsx
+import React, { useEffect } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 
 /**
  * Компонент для обработки неизвестных маршрутов
- * Проверяет, является ли путь статическим ресурсом и пропускает их к серверу,
+ * Проверяет, является ли путь статическим ресурсом и перенаправляет браузер напрямую к серверу,
  * иначе перенаправляет на страницу 404
  */
 const CatchAllRoute = () => {
@@ -40,11 +41,28 @@ const CatchAllRoute = () => {
     pattern.test(location.pathname)
   );
 
-  // Если это статический ресурс, возвращаем null
-  // (позволяем серверу обработать запрос)
+  useEffect(() => {
+    // Если это статический ресурс, принудительно перенаправляем на сервер
+    if (isStaticResource) {
+      console.log(`Static resource detected: ${location.pathname} - redirecting to server`);
+      // Заменяем текущую запись в истории браузера и перенаправляем на сервер
+      window.location.replace(location.pathname);
+    }
+  }, [location.pathname, isStaticResource]);
+
+  // Если это статический ресурс, показываем загрузку пока происходит редирект
   if (isStaticResource) {
-    console.log(`Static resource detected: ${location.pathname}`);
-    return null;
+    return (
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+        fontSize: '18px'
+      }}>
+        Loading...
+      </div>
+    );
   }
 
   // Логируем неизвестные маршруты для отладки

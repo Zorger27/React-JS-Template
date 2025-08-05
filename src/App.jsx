@@ -20,6 +20,25 @@ const AppLayout = () => {
   const location = useLocation();
   const isNotFound = location.pathname.startsWith('/404');
 
+  // Проверяем статические ресурсы на уровне AppLayout
+  const staticPatterns = [
+    /^\/ogimage\//,
+    /^\/assets\//,
+    /^\/images\//,
+    /^\/static\//,
+    /\.(jpg|jpeg|png|gif|svg|webp|avif|ico|pdf|zip|css|js|woff|woff2|ttf|eot|mp4|webm|ogg)$/i
+  ];
+
+  const isStaticResource = staticPatterns.some(pattern =>
+    pattern.test(location.pathname)
+  );
+
+  // Если это статический ресурс, перенаправляем к серверу
+  if (isStaticResource) {
+    window.location.replace(location.pathname);
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="app">
       <Canonical url={`https://react-js-template.vercel.app${location.pathname}`} />
