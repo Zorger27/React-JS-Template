@@ -1,5 +1,6 @@
 import React from 'react';
-import {BrowserRouter as Router, Routes, Route, useLocation, Navigate} from 'react-router-dom';
+// import {BrowserRouter as Router, Routes, Route, useLocation, Navigate} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom';
 import { HelmetProvider } from '@dr.pogodin/react-helmet';
 import Canonical from '@/components/seo/Canonical.jsx';
 // import GoogleAnalytics from '@/components/seo/GoogleAnalytics.jsx';
@@ -21,8 +22,17 @@ const AppLayout = () => {
 
   console.log('[AppLayout] location.pathname:', location.pathname);
 
-  if (location.pathname.startsWith('/ogimage/')) {
+  if (
+    location.pathname.startsWith('/ogimage/') &&
+    document.location.pathname !== location.pathname
+  ) {
+    // Первый заход — перехватить и уйти на "сырой" URL
     window.location.replace(location.pathname);
+    return null;
+  }
+
+  if (location.pathname.startsWith('/ogimage/')) {
+    // Второй заход: уже после replace — ничего не рендерить
     return null;
   }
 
