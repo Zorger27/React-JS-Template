@@ -1,6 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import { Helmet, HelmetProvider } from '@dr.pogodin/react-helmet';
+import { HelmetProvider } from '@dr.pogodin/react-helmet';
+import Canonical from '@/components/seo/Canonical.jsx';
+// import GoogleAnalytics from '@/components/seo/GoogleAnalytics.jsx';
+// import GoogleSiteVerification from '@/components/seo/GoogleSiteVerification.jsx';
 
 import Header from '@/components/layout/header.jsx';
 import Footer from '@/components/layout/footer.jsx';
@@ -16,28 +19,11 @@ const AppLayout = () => {
   const location = useLocation();
   const isNotFound = location.pathname.startsWith('/404');
 
-  const canonicalUrl = `https://react-js-template.vercel.app${location.pathname}`;
-
   return (
     <div className="app">
-      <Helmet>
-        {/* Canonical URL */}
-        <link rel="canonical" href={canonicalUrl} />
-
-        {/*/!* Google Analytics *!/*/}
-        {/*<script async src="https://www.googletagmanager.com/gtag/js?id=G-RZHR947YVN" />*/}
-        {/*<script>*/}
-        {/*  {`*/}
-        {/*    window.dataLayer = window.dataLayer || [];*/}
-        {/*    function gtag(){dataLayer.push(arguments);}*/}
-        {/*    gtag('js', new Date());*/}
-        {/*    gtag('config', 'G-RZHR947YVN');*/}
-        {/*  `}*/}
-        {/*</script>*/}
-
-        {/*/!* Google Site Verification *!/*/}
-        {/*<meta name="google-site-verification" content="Gq9vrXtN91P1JteGFo-xrlLKT0PR8u-4P4xs21oUr8Y" />*/}
-      </Helmet>
+      <Canonical url={`https://react-js-template.vercel.app${location.pathname}`} />
+      {/*<GoogleAnalytics id="G-RZHR947YVN" />*/}
+      {/*<GoogleSiteVerification code="Gq9vrXtN91P1JteGFo-xrlLKT0PR8u-4P4xs21oUr8Y" />*/}
 
       {!isNotFound && <Header />}
       {/*<Header />*/}
