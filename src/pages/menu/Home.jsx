@@ -2,11 +2,31 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import '@/pages/menu/Home.scss';
+import {Helmet} from "@dr.pogodin/react-helmet";
 
 const Home = () => {
   const { t } = useTranslation();
   return (
     <div className="home">
+      <Helmet>
+        <title>{t('home.name')}</title>
+        <meta name="description" content={t('home.disc')} />
+
+        {/* Open Graph meta tags */}
+        <meta property="og:title" content={t('home.name')} />
+        <meta property="og:description" content={t('home.disc')} />
+        <meta property="og:image" content="https://react-js-template.vercel.app/ogimage/home.jpg" />
+        <meta property="og:url" content="https://react-js-template.vercel.app" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="https://react-js-template.vercel.app" />
+
+        {/* Twitter meta tags */}
+        <meta property="twitter:title" content={t('home.name')} />
+        <meta property="twitter:description" content={t('home.disc')} />
+        <meta property="twitter:image" content="https://react-js-template.vercel.app/ogimage/home.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
+
       <div className="container">
         <h1>{t('home.title')}</h1>
         <p className="flex-center">{t('home.description')}</p>

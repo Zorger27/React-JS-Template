@@ -27,7 +27,9 @@
   },
   "home": {
     "title": "Welcome!",
-    "description": "Here are my React projects and information about them. \uD83D\uDE09"
+    "description": "Here are my React projects and information about them. \uD83D\uDE09",
+    "name": "Main page",
+    "disc": "This is the Project's Main Page"
   },
   "project1": {
     "name": "Project № 1",
@@ -50,7 +52,9 @@
     "more05": "Welcome! \uD83E\uDD29\uD83D\uDE0E",
     "technologies": "The used technologies",
     "name": "Name",
-    "version": "Version"
+    "version": "Version",
+    "nameOG": "About",
+    "disc": "Detailed project information"
   },
   "extra": {
     "loading": "loading...",

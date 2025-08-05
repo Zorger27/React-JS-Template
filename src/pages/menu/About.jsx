@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import '@/pages/menu/About.scss';
+import {Helmet} from "@dr.pogodin/react-helmet";
 
 export const About = () => {
   const { t } = useTranslation();
@@ -11,6 +12,24 @@ export const About = () => {
 
   return (
     <div className="about">
+      <Helmet>
+        <title>{t('about.nameOG')}</title>
+        <meta name="description" content={t('about.disc')} />
+
+        {/* Open Graph meta tags */}
+        <meta property="og:title" content={t('about.nameOG')} />
+        <meta property="og:description" content={t('about.disc')} />
+        <meta property="og:image" content="https://react-js-template.vercel.app/ogimage/about.jpg" />
+        <meta property="og:url" content="https://react-js-template.vercel.app" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="https://react-js-template.vercel.app" />
+
+        {/* Twitter meta tags */}
+        <meta property="twitter:title" content={t('about.nameOG')} />
+        <meta property="twitter:description" content={t('about.disc')} />
+        <meta property="twitter:image" content="https://react-js-template.vercel.app/ogimage/about.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
       <div className="container">
         <h1>
           {t('about.title')}

@@ -26,6 +26,7 @@ export const Project1 = () => {
         <meta property="twitter:image" content="https://react-js-template.vercel.app/ogimage/project1.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
+
       <div className="container">
         <h1><Link to="/" className="back-to-menu" title={t('extra.back')}>
           <i className="fa fa-arrow-circle-left"></i></Link>{t('project1.name')}
