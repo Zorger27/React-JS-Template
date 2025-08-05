@@ -20,23 +20,8 @@ import '@/App.scss';
 
 const AppLayout = () => {
   const location = useLocation();
-  const path = location.pathname;
 
   console.log('[AppLayout] location.pathname:', location.pathname);
-
-  if (path.startsWith('/ogimage/')) {
-    // Браузерный мета-редирект
-    return (
-      <html>
-      <head>
-        <meta httpEquiv="refresh" content={`0; url=${path}`} />
-      </head>
-      <body>
-      <p>Redirecting to image...</p>
-      </body>
-      </html>
-    );
-  }
 
   const isNotFound = location.pathname.startsWith('/404');
 
