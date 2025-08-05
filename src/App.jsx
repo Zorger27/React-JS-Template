@@ -18,6 +18,15 @@ import '@/App.scss';
 
 const AppLayout = () => {
   const location = useLocation();
+
+  // Игнорировать любые запросы к статике
+  const isStaticPath =
+    location.pathname.startsWith('/ogimage') ||
+    location.pathname.startsWith('/assets') ||
+    location.pathname.startsWith('/images');
+
+  if (isStaticPath) return null;
+
   const isNotFound = location.pathname.startsWith('/404');
 
   return (
@@ -38,7 +47,7 @@ const AppLayout = () => {
           <Route path="/404" element={<PageNotFound />} />
 
           {/* Обработка неизвестных маршрутов */}
-          <Route path="*" element={<Navigate to="/404" replace />} />
+          {/*<Route path="*" element={<Navigate to="/404" replace />} />*/}
 
           {/*<Route path="*" element={<CatchAllRoute />} />*/}
         </Routes>
