@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { HelmetProvider } from '@dr.pogodin/react-helmet';
 import Canonical from '@/components/seo/Canonical.jsx';
-// import GoogleAnalytics from '@/components/seo/GoogleAnalytics.jsx';
-// import GoogleSiteVerification from '@/components/seo/GoogleSiteVerification.jsx';
+import GoogleAnalytics from '@/components/seo/GoogleAnalytics.jsx';
+import GoogleSiteVerification from '@/components/seo/GoogleSiteVerification.jsx';
 
 import Header from '@/components/layout/header.jsx';
 import Footer from '@/components/layout/footer.jsx';
