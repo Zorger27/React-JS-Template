@@ -36,10 +36,6 @@ const AppLayout = () => {
           <Route path="/about" element={<About />} />
           <Route path="/404" element={<PageNotFound />} />
 
-          {/* Статические ресурсы - пропускаем их */}
-          <Route path="/ogimage/*" element={null} />
-          <Route path="/assets/*" element={null} />
-
           {/* Обработка неизвестных маршрутов */}
           <Route path="*" element={<CatchAllRoute />} />
         </Routes>
