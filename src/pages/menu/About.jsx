@@ -43,7 +43,7 @@ export const About = () => {
 
         <div className="about-content">
           <section className="about-description">
-            <line></line>
+            <hr className="custom-line" />
             <h2 className="more" onClick={() => setShowMore(!showMore)}>
               {t('about.more01')}
               <i className="fas fa-hand-pointer" />
@@ -56,7 +56,7 @@ export const About = () => {
                 <h3>{t('about.more05')}</h3>
               </>
             )}
-            <line></line>
+            <hr className="custom-line" />
           </section>
 
           <section className="about-tech">

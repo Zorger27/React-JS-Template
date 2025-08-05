@@ -30,7 +30,7 @@ const Home = () => {
       <div className="container">
         <h1>{t('home.title')}</h1>
         <p className="flex-center">{t('home.description')}</p>
-        <line></line>
+        <hr className="custom-line" />
         <div className="projects-grid">
           <Link to="/project1" className="project-card-link">
             <div className="project-card">

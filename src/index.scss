@@ -13,11 +13,11 @@ body {
   flex-direction: column;
 }
 
-line{
-  content:'';
-  display:block;
-  width:75%;
-  border:1px solid;
+.custom-line {
+  color: black;
+  width: 75%;
+  border: none;
+  border-top: 2px solid;
   margin-bottom: 4px;
 }
 
@@ -31,5 +31,5 @@ table {border-collapse: collapse;}
 .fas.fa-arrow-alt-circle-up {color: lightseagreen;}
 .fas.fa-hand-pointer {color: red; margin-left: 0.5rem;}
 
-@media(max-width:1020px) { line {width: 100%;} }
-@media(max-width:768px) { line {width: 100%;} }
+@media(max-width:1020px) { .custom-line {width: 100%;} }
+@media(max-width:768px) { .custom-line {width: 100%;} }

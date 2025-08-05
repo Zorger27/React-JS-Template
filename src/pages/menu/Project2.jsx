@@ -29,7 +29,7 @@ export const Project2 = () => {
 
       <div className="container">
         <h1><Link to="/" className="back-to-menu" title={t('extra.back')}><i className="fa fa-arrow-circle-left"></i></Link>{t('project2.name')}</h1>
-        <line></line>
+        <hr className="custom-line" />
       </div>
     </div>
   );
