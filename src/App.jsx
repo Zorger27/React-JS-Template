@@ -27,6 +27,11 @@ const AppLayout = () => {
   // 👉 Посмотреть текущий путь в консоли
   console.log('[AppLayout] location.pathname:', location.pathname);
 
+  if (location.pathname.startsWith('/ogimage')) {
+    window.location.href = location.pathname;
+    return null;
+  }
+
   return (
     <div className="app">
       <Canonical url={`https://react-js-template.vercel.app${path}`} />
