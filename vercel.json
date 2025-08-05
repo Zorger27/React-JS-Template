@@ -1,5 +1,8 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/((?!ogimage|assets|images|static|public).*)",
+      "destination": "/index.html"
+    }
   ]
 }
