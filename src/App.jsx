@@ -23,15 +23,16 @@ const AppLayout = () => {
   console.log('[AppLayout] location.pathname:', location.pathname);
 
   if (location.pathname.startsWith('/ogimage/')) {
+    // если путь совпадает — перезагружаем страницу напрямую
     if (document.location.pathname === location.pathname) {
-      // Страница уже совпадает, ничего не делаем
+      window.location.reload();
       return (
         <div style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
           <p>Загрузка изображения...</p>
         </div>
       );
     } else {
-      // Форсируем браузер открыть изображение напрямую
+      // редирект на сырой путь
       window.location.href = location.pathname;
       return null;
     }
