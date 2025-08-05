@@ -19,23 +19,22 @@ import '@/App.scss';
 
 const AppLayout = () => {
   const location = useLocation();
+  const path = location.pathname;
 
   console.log('[AppLayout] location.pathname:', location.pathname);
 
-  if (location.pathname.startsWith('/ogimage/')) {
-    // если путь совпадает — перезагружаем страницу напрямую
-    if (document.location.pathname === location.pathname) {
-      window.location.reload();
-      return (
-        <div style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
-          <p>Загрузка изображения...</p>
-        </div>
-      );
-    } else {
-      // редирект на сырой путь
-      window.location.href = location.pathname;
-      return null;
-    }
+  if (path.startsWith('/ogimage/')) {
+    // Браузерный мета-редирект
+    return (
+      <html>
+      <head>
+        <meta httpEquiv="refresh" content={`0; url=${path}`} />
+      </head>
+      <body>
+      <p>Redirecting to image...</p>
+      </body>
+      </html>
+    );
   }
 
   const isNotFound = location.pathname.startsWith('/404');
