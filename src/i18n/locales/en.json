@@ -56,6 +56,12 @@
     "nameOG": "About",
     "disc": "Detailed project information"
   },
+  "page404": {
+    "name": "Page 404",
+    "disc": "Page 404 - page not found",
+    "info404": "Page not found, back to main page",
+    "btn404": "Back to MAIN page"
+  },
   "extra": {
     "loading": "loading...",
     "detail": "For more details see here ⇢",
@@ -71,7 +77,5 @@
     "fullScreenView": "Canvas Full Screen",
     "toggleFullScreen": "Document Full Screen",
     "closeFullScreen": "Close full-screen document mode",
-    "info404": "Page not found, back to main page",
-    "btn404": "Back to MAIN page"
   }
 }
