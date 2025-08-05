@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from '@dr.pogodin/react-helmet';
 import Canonical from '@/components/seo/Canonical.jsx';
 // import GoogleAnalytics from '@/components/seo/GoogleAnalytics.jsx';
@@ -13,6 +13,7 @@ import { Project2 } from '@/pages/menu/Project2.jsx';
 import { Project3 } from '@/pages/menu/Project3.jsx';
 import { About } from '@/pages/menu/About.jsx';
 import PageNotFound from '@/pages/service/PageNotFound.jsx';
+import CatchAllRoute from '@/components/util/CatchAllRoute.jsx';
 import '@/App.scss';
 
 const AppLayout = () => {
@@ -26,7 +27,6 @@ const AppLayout = () => {
       {/*<GoogleSiteVerification code="Gq9vrXtN91P1JteGFo-xrlLKT0PR8u-4P4xs21oUr8Y" />*/}
 
       {!isNotFound && <Header />}
-      {/*<Header />*/}
       <main className="main">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -35,10 +35,10 @@ const AppLayout = () => {
           <Route path="/project3" element={<Project3 />} />
           <Route path="/about" element={<About />} />
           <Route path="/404" element={<PageNotFound />} />
-          <Route path="*" element={<Navigate to="/404" replace />} />
+          {/* Обработка неизвестных маршрутов */}
+          <Route path="*" element={<CatchAllRoute />} />
         </Routes>
       </main>
-      {/*<Footer />*/}
       {!isNotFound && <Footer />}
     </div>
   );
