@@ -22,18 +22,19 @@ const AppLayout = () => {
 
   console.log('[AppLayout] location.pathname:', location.pathname);
 
-  if (
-    location.pathname.startsWith('/ogimage/') &&
-    document.location.pathname !== location.pathname
-  ) {
-    // Первый заход — перехватить и уйти на "сырой" URL
-    window.location.replace(location.pathname);
-    return null;
-  }
-
   if (location.pathname.startsWith('/ogimage/')) {
-    // Второй заход: уже после replace — ничего не рендерить
-    return null;
+    if (document.location.pathname === location.pathname) {
+      // Страница уже совпадает, ничего не делаем
+      return (
+        <div style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
+          <p>Загрузка изображения...</p>
+        </div>
+      );
+    } else {
+      // Форсируем браузер открыть изображение напрямую
+      window.location.href = location.pathname;
+      return null;
+    }
   }
 
   const isNotFound = location.pathname.startsWith('/404');
