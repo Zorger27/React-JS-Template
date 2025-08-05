@@ -20,9 +20,12 @@ const AppLayout = () => {
   const location = useLocation();
   const path = location.pathname;
 
-  if (/\.(jpg|png|gif|svg)$/.test(path)) return null; // игнор статических файлов
+  // if (/\.(jpg|png|gif|svg)$/.test(path)) return null; // игнор статических файлов
 
   const isNotFound = path.startsWith('/404');
+
+  // 👉 Посмотреть текущий путь в консоли
+  console.log('[AppLayout] location.pathname:', location.pathname);
 
   return (
     <div className="app">
