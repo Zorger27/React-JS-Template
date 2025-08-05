@@ -1,8 +1,8 @@
 {
   "version": 2,
   "rewrites": [
-    { "source": "/ogimage/:any*", "destination": "/ogimage/:any*" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/ogimage/:path*", "destination": "/ogimage/:path*" },
+    { "source": "/:path*", "destination": "/index.html" }
   ],
   "cleanUrls": false
 }
