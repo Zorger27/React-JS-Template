@@ -18,7 +18,7 @@ import '@/App.scss';
 
 const AppLayout = () => {
   const location = useLocation();
-  const isNotFound = location.pathname.startsWith('/404');
+  // const isNotFound = location.pathname.startsWith('/404');
 
   return (
     <div className="app">
@@ -26,7 +26,8 @@ const AppLayout = () => {
       {/*<GoogleAnalytics id="G-RZHR947YVN" />*/}
       {/*<GoogleSiteVerification code="Gq9vrXtN91P1JteGFo-xrlLKT0PR8u-4P4xs21oUr8Y" />*/}
 
-      {!isNotFound && <Header />}
+      {/*{!isNotFound && <Header />}*/}
+      <Header />
       <main className="main">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -37,12 +38,13 @@ const AppLayout = () => {
           <Route path="/404" element={<PageNotFound />} />
 
           {/* Обработка неизвестных маршрутов */}
-          <Route path="*" element={<Navigate to="/404" replace />} />
+          {/*<Route path="*" element={<Navigate to="/404" replace />} />*/}
 
           {/*<Route path="*" element={<CatchAllRoute />} />*/}
         </Routes>
       </main>
-      {!isNotFound && <Footer />}
+      <Footer />
+      {/*{!isNotFound && <Footer />}*/}
     </div>
   );
 };
