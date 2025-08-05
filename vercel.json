@@ -1,6 +1,7 @@
 {
   "version": 2,
   "rewrites": [
+    { "source": "/ogimage/:any*", "destination": "/ogimage/:any*" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "cleanUrls": false
