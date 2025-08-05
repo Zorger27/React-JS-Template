@@ -14,7 +14,7 @@ import '@/App.scss';
 
 const AppLayout = () => {
   const location = useLocation();
-  const isNotFound = location.pathname.startsWith('/404');
+  // const isNotFound = location.pathname.startsWith('/404');
 
   const canonicalUrl = `https://react-js-template.vercel.app${location.pathname}`;
 
@@ -39,7 +39,8 @@ const AppLayout = () => {
         {/*<meta name="google-site-verification" content="Gq9vrXtN91P1JteGFo-xrlLKT0PR8u-4P4xs21oUr8Y" />*/}
       </Helmet>
 
-      {!isNotFound && <Header />}
+      {/*{!isNotFound && <Header />}*/}
+      <Header />
       <main className="main">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -51,7 +52,8 @@ const AppLayout = () => {
           <Route path="*" element={<Navigate to="/404" replace />} />
         </Routes>
       </main>
-      {!isNotFound && <Footer />}
+      <Footer />
+      {/*{!isNotFound && <Footer />}*/}
     </div>
   );
 };
