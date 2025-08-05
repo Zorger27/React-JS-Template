@@ -18,23 +18,19 @@ import '@/App.scss';
 
 const AppLayout = () => {
   const location = useLocation();
-  const path = location.pathname;
 
-  // if (/\.(jpg|png|gif|svg)$/.test(path)) return null; // игнор статических файлов
-
-  const isNotFound = path.startsWith('/404');
-
-  // 👉 Посмотреть текущий путь в консоли
   console.log('[AppLayout] location.pathname:', location.pathname);
 
-  if (location.pathname.startsWith('/ogimage')) {
-    window.location.href = location.pathname;
+  if (location.pathname.startsWith('/ogimage/')) {
+    window.location.replace(location.pathname);
     return null;
   }
 
+  const isNotFound = location.pathname.startsWith('/404');
+
   return (
     <div className="app">
-      <Canonical url={`https://react-js-template.vercel.app${path}`} />
+      <Canonical url={`https://react-js-template.vercel.app${location.pathname}`} />
       {/*<GoogleAnalytics id="G-RZHR947YVN" />*/}
       {/*<GoogleSiteVerification code="Gq9vrXtN91P1JteGFo-xrlLKT0PR8u-4P4xs21oUr8Y" />*/}
 
