@@ -13,7 +13,7 @@ import { Project2 } from '@/pages/menu/Project2.jsx';
 import { Project3 } from '@/pages/menu/Project3.jsx';
 import { About } from '@/pages/menu/About.jsx';
 import PageNotFound from '@/pages/service/PageNotFound.jsx';
-import CatchAllRoute from '@/components/util/CatchAllRoute.jsx';
+// import CatchAllRoute from '@/components/util/CatchAllRoute.jsx';
 import '@/App.scss';
 
 const AppLayout = () => {
@@ -37,7 +37,7 @@ const AppLayout = () => {
           <Route path="/404" element={<PageNotFound />} />
 
           {/* Обработка неизвестных маршрутов */}
-          <Route path="*" element={<CatchAllRoute />} />
+          {/*<Route path="*" element={<CatchAllRoute />} />*/}
         </Routes>
       </main>
       {!isNotFound && <Footer />}
