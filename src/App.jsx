@@ -18,20 +18,15 @@ import '@/App.scss';
 
 const AppLayout = () => {
   const location = useLocation();
+  const path = location.pathname;
 
-  // Игнорировать любые запросы к статике
-  const isStaticPath =
-    location.pathname.startsWith('/ogimage') ||
-    location.pathname.startsWith('/assets') ||
-    location.pathname.startsWith('/images');
+  if (/\.(jpg|png|gif|svg)$/.test(path)) return null; // игнор статических файлов
 
-  if (isStaticPath) return null;
-
-  const isNotFound = location.pathname.startsWith('/404');
+  const isNotFound = path.startsWith('/404');
 
   return (
     <div className="app">
-      <Canonical url={`https://react-js-template.vercel.app${location.pathname}`} />
+      <Canonical url={`https://react-js-template.vercel.app${path}`} />
       {/*<GoogleAnalytics id="G-RZHR947YVN" />*/}
       {/*<GoogleSiteVerification code="Gq9vrXtN91P1JteGFo-xrlLKT0PR8u-4P4xs21oUr8Y" />*/}
 
@@ -45,6 +40,7 @@ const AppLayout = () => {
           <Route path="/project3" element={<Project3 />} />
           <Route path="/about" element={<About />} />
           <Route path="/404" element={<PageNotFound />} />
+          <Route path="*" element={<PageNotFound />} />
 
           {/* Обработка неизвестных маршрутов */}
           {/*<Route path="*" element={<Navigate to="/404" replace />} />*/}

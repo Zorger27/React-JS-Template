@@ -1,10 +1,7 @@
 {
   "version": 2,
   "rewrites": [
-    {
-      "source": "/((?!ogimage|assets|static|public).*)",
-      "destination": "/index.html"
-    }
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
   "cleanUrls": false
 }
