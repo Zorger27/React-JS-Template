@@ -1,8 +1,30 @@
 {
   "version": 2,
   "rewrites": [
-    { "source": "/ogimage/:path*", "destination": "/ogimage/:path*" },
-    { "source": "/:path*", "destination": "/index.html" }
+    {
+      "source": "/ogimage/:filename",
+      "destination": "/ogimage/:filename",
+      "check": true
+    },
+    {
+      "source": "/:path*",
+      "destination": "/index.html"
+    }
   ],
-  "cleanUrls": false
+  "cleanUrls": false,
+  "headers": [
+    {
+      "source": "/ogimage/(.*)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "image/jpeg"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
 }
