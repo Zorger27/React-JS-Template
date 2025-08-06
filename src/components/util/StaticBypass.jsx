@@ -1,13 +1,25 @@
-import React from 'react';
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 const StaticBypass = () => {
-  React.useEffect(() => {
-    window.location.href = window.location.pathname;
-  }, []);
+  const { filename } = useParams();
 
+  useEffect(() => {
+    // Перенаправляем на статический файл
+    const staticUrl = `/ogimage/${filename}`;
+    window.location.replace(staticUrl);
+  }, [filename]);
+
+  // Показываем загрузку пока происходит перенаправление
   return (
-    <div style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
-      <p>Загрузка изображения...</p>
+    <div style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100vh',
+      fontSize: '18px'
+    }}>
+      Loading...
     </div>
   );
 };

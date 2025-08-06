@@ -13,7 +13,7 @@ import { Project1 } from '@/pages/menu/Project1.jsx';
 import { Project2 } from '@/pages/menu/Project2.jsx';
 import { Project3 } from '@/pages/menu/Project3.jsx';
 import { About } from '@/pages/menu/About.jsx';
-// import StaticBypass from "@/components/util/StaticBypass.jsx";
+import StaticBypass from "@/components/util/StaticBypass.jsx";
 import PageNotFound from '@/pages/service/PageNotFound.jsx';
 // import CatchAllRoute from '@/components/util/CatchAllRoute.jsx';
 import '@/App.scss';
@@ -21,6 +21,7 @@ import '@/App.scss';
 const AppLayout = () => {
   const location = useLocation();
   const isNotFound = location.pathname.startsWith('/404');
+  const isOgImage = location.pathname.startsWith('/ogimage/');
 
   // console.log('[AppLayout] location.pathname:', location.pathname);
 
@@ -30,11 +31,11 @@ const AppLayout = () => {
       {/*<GoogleAnalytics id="G-RZHR947YVN" />*/}
       {/*<GoogleSiteVerification code="Gq9vrXtN91P1JteGFo-xrlLKT0PR8u-4P4xs21oUr8Y" />*/}
 
-      {!isNotFound && <Header />}
+      {!isNotFound && !isOgImage && <Header />}
       {/*<Header />*/}
       <main className="main">
         <Routes>
-          {/*<Route path="/ogimage/:filename" element={<StaticBypass />}/>*/}
+          <Route path="/ogimage/:filename" element={<StaticBypass />}/>
           <Route path="/" element={<Home />} />
           <Route path="/project1" element={<Project1 />} />
           <Route path="/project2" element={<Project2 />} />
@@ -50,7 +51,7 @@ const AppLayout = () => {
         </Routes>
       </main>
       {/*<Footer />*/}
-      {!isNotFound && <Footer />}
+      {!isNotFound && !isOgImage && <Footer />}
     </div>
   );
 };
