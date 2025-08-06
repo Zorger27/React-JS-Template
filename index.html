@@ -1,87 +1,17 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- СКРИПТ СЮДА -->
-  <script>
-    (function() {
-      // Проверяем URL еще до загрузки страницы
-      if (window.location.pathname.startsWith('/ogimage/')) {
-        console.log('OG Bypass activated for:', window.location.pathname);
-
-        // Ждем загрузки DOM
-        document.addEventListener('DOMContentLoaded', function() {
-          const filename = window.location.pathname.split('/ogimage/')[1];
-
-          // Создаем новый HTML документ
-          const newHTML = '<!DOCTYPE html>' +
-            '<html>' +
-            '<head>' +
-            '<meta charset="utf-8">' +
-            '<meta name="viewport" content="width=device-width, initial-scale=1">' +
-            '<title>OG Image: ' + filename + '</title>' +
-            '<style>' +
-            '* { margin: 0; padding: 0; }' +
-            'body {' +
-            'width: 100vw;' +
-            'height: 100vh;' +
-            'display: flex;' +
-            'justify-content: center;' +
-            'align-items: center;' +
-            'background: #f0f0f0;' +
-            'font-family: Arial, sans-serif;' +
-            '}' +
-            '.loading { font-size: 18px; color: #666; }' +
-            '.error { text-align: center; color: #333; }' +
-            'img { max-width: 100%; max-height: 100%; object-fit: contain; }' +
-            '</style>' +
-            '</head>' +
-            '<body>' +
-            '<div class="loading">Loading image...</div>' +
-            '</body>' +
-            '</html>';
-
-          // Полностью заменяем документ
-          document.open();
-          document.write(newHTML);
-          document.close();
-
-          // Создаем и загружаем изображение
-          const img = new Image();
-          img.onload = function() {
-            console.log('Image loaded successfully');
-            document.body.innerHTML = '';
-            document.body.appendChild(img);
-          };
-
-          img.onerror = function() {
-            console.log('Image failed to load');
-            document.body.innerHTML = '<div class="error"><h2>Image not found</h2><p>The requested OG image "' + filename + '" was not found.</p></div>';
-          };
-
-          img.src = '/ogimage/' + filename;
-        });
-
-        // Предотвращаем загрузку React
-        window.addEventListener('load', function(e) {
-          e.stopImmediatePropagation();
-        }, true);
-      }
-    })();
-  </script>
-  <!-- КОНЕЦ ВСТАВКИ -->
-
-  <meta name="apple-mobile-web-app-title" content="React Template" />
-  <link rel="icon" type="image/png" href="/favicon.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <title>React Vite PWA Template</title>
-</head>
-<body>
-<div id="root"></div>
-<script type="module" src="/src/main.jsx"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-title" content="React Template" />
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <title>React Vite PWA Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
