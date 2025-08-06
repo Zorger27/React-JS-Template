@@ -5,12 +5,12 @@ const StaticBypass = () => {
   const { filename } = useParams();
 
   useEffect(() => {
-    // Перенаправляем на статический файл
-    const staticUrl = `/ogimage/${filename}`;
-    window.location.replace(staticUrl);
+    if (filename) {
+      // Используем href вместо replace для более надежного перенаправления
+      window.location.href = `/ogimage/${filename}`;
+    }
   }, [filename]);
 
-  // Показываем загрузку пока происходит перенаправление
   return (
     <div style={{
       display: 'flex',
