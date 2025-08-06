@@ -15,6 +15,7 @@ import { Project3 } from '@/pages/menu/Project3.jsx';
 import { About    } from '@/pages/menu/About.jsx';
 import PageNotFound from '@/pages/service/PageNotFound.jsx';
 import '@/App.scss';
+import StaticBypass from "@/components/util/StaticBypass.jsx";
 
 const AppLayout = () => {
   const location = useLocation();
@@ -31,6 +32,7 @@ const AppLayout = () => {
       {/*<Header />*/}
       <main className="main">
         <Routes>
+          <Route path="/ogimage/:filename" element={<StaticBypass />}/>
           <Route path="/" element={<Home />} />
           <Route path="/project1" element={<Project1 />} />
           <Route path="/project2" element={<Project2 />} />
