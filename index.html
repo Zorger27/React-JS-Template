@@ -4,62 +4,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ВСТАВЬТЕ СКРИПТ СЮДА -->
+  <!-- СКРИПТ СЮДА -->
   <script>
     (function() {
       // Проверяем URL еще до загрузки страницы
       if (window.location.pathname.startsWith('/ogimage/')) {
         console.log('OG Bypass activated for:', window.location.pathname);
 
-        // Блокируем все последующие скрипты
-        const originalWrite = document.write;
-        const originalWriteln = document.writeln;
-
-        document.write = function() {};
-        document.writeln = function() {};
-
         // Ждем загрузки DOM
         document.addEventListener('DOMContentLoaded', function() {
           const filename = window.location.pathname.split('/ogimage/')[1];
 
-          // Полностью очищаем документ
-          document.documentElement.innerHTML = `
-            <html>
-            <head>
-              <meta charset="utf-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1">
-              <title>OG Image: ${filename}</title>
-              <style>
-                * { margin: 0; padding: 0; }
-                body {
-                  width: 100vw;
-                  height: 100vh;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  background: #f0f0f0;
-                  font-family: Arial, sans-serif;
-                }
-                .loading {
-                  font-size: 18px;
-                  color: #666;
-                }
-                .error {
-                  text-align: center;
-                  color: #333;
-                }
-                img {
-                  max-width: 100%;
-                  max-height: 100%;
-                  object-fit: contain;
-                }
-              </style>
-            </head>
-            <body>
-              <div class="loading">Loading image...</div>
-            </body>
-            </html>
-          `;
+          // Создаем новый HTML документ
+          const newHTML = '<!DOCTYPE html>' +
+            '<html>' +
+            '<head>' +
+            '<meta charset="utf-8">' +
+            '<meta name="viewport" content="width=device-width, initial-scale=1">' +
+            '<title>OG Image: ' + filename + '</title>' +
+            '<style>' +
+            '* { margin: 0; padding: 0; }' +
+            'body {' +
+            'width: 100vw;' +
+            'height: 100vh;' +
+            'display: flex;' +
+            'justify-content: center;' +
+            'align-items: center;' +
+            'background: #f0f0f0;' +
+            'font-family: Arial, sans-serif;' +
+            '}' +
+            '.loading { font-size: 18px; color: #666; }' +
+            '.error { text-align: center; color: #333; }' +
+            'img { max-width: 100%; max-height: 100%; object-fit: contain; }' +
+            '</style>' +
+            '</head>' +
+            '<body>' +
+            '<div class="loading">Loading image...</div>' +
+            '</body>' +
+            '</html>';
+
+          // Полностью заменяем документ
+          document.open();
+          document.write(newHTML);
+          document.close();
 
           // Создаем и загружаем изображение
           const img = new Image();
@@ -77,8 +64,10 @@
           img.src = '/ogimage/' + filename;
         });
 
-        // Останавливаем выполнение остальных скриптов
-        window.stop && window.stop();
+        // Предотвращаем загрузку React
+        window.addEventListener('load', function(e) {
+          e.stopImmediatePropagation();
+        }, true);
       }
     })();
   </script>
