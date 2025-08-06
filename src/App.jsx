@@ -1,6 +1,6 @@
 import React from 'react';
-// import {BrowserRouter as Router, Routes, Route, useLocation, Navigate} from 'react-router-dom';
-import {BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, useLocation, Navigate} from 'react-router-dom';
+// import {BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom';
 import { HelmetProvider } from '@dr.pogodin/react-helmet';
 import Canonical from '@/components/seo/Canonical.jsx';
 // import GoogleAnalytics from '@/components/seo/GoogleAnalytics.jsx';
@@ -41,11 +41,11 @@ const AppLayout = () => {
           <Route path="/project2" element={<Project2 />} />
           <Route path="/project3" element={<Project3 />} />
           <Route path="/about" element={<About />} />
-          <Route path="/404" element={<PageNotFound />} />
-          <Route path="*" element={<PageNotFound />} />
+          {/*<Route path="/404" element={<PageNotFound />} />*/}
+          {/*<Route path="*" element={<PageNotFound />} />*/}
 
           {/* Обработка неизвестных маршрутов */}
-          {/*<Route path="*" element={<Navigate to="/404" replace />} />*/}
+          <Route path="*" element={<Navigate to="/404" replace />} />
 
           {/*<Route path="*" element={<CatchAllRoute />} />*/}
         </Routes>
