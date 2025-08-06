@@ -1,16 +1,24 @@
-import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 const StaticBypass = () => {
   const { filename } = useParams();
 
-  useEffect(() => {
-    if (filename && filename.endsWith('.jpg')) {
-      // Перенаправляем на HTML версию
-      const htmlVersion = filename.replace('.jpg', '.html');
-      window.location.replace(`/ogimage/${htmlVersion}`);
+  // Определяем контент в зависимости от filename
+  const getOGContent = (filename) => {
+    if (filename === 'about.jpg') {
+      return {
+        title: 'About Us',
+        subtitle: 'React Template Project'
+      };
     }
-  }, [filename]);
+    // Можно добавить другие страницы
+    return {
+      title: 'Page',
+      subtitle: 'React Template'
+    };
+  };
+
+  const content = getOGContent(filename);
 
   // Показываем красивую OG картинку прямо здесь
   return (
@@ -69,14 +77,14 @@ const StaticBypass = () => {
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text'
           }}>
-            About Us
+            {content.title}
           </h1>
           <p style={{
             fontSize: '32px',
             color: '#666',
             fontWeight: '400'
           }}>
-            React Template Project
+            {content.subtitle}
           </p>
         </div>
       </div>
