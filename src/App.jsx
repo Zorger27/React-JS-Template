@@ -20,10 +20,9 @@ import '@/App.scss';
 
 const AppLayout = () => {
   const location = useLocation();
+  const isNotFound = location.pathname.startsWith('/404');
 
   // console.log('[AppLayout] location.pathname:', location.pathname);
-
-  const isNotFound = location.pathname.startsWith('/404');
 
   return (
     <div className="app">
