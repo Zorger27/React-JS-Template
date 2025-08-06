@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "rewrites": [
+  "redirects": [
     {
       "source": "/ogimage/about.jpg",
-      "destination": "/ogimage/about.html"
-    },
+      "destination": "/ogimage/about.html",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
     {
       "source": "/:path*",
       "destination": "/index.html"
