@@ -3,6 +3,7 @@ import React from 'react';
 import {BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom';
 import { HelmetProvider } from '@dr.pogodin/react-helmet';
 import Canonical from '@/components/seo/Canonical.jsx';
+import OGBypassScript from '@/components/util/OGBypassScript.jsx';
 // import GoogleAnalytics from '@/components/seo/GoogleAnalytics.jsx';
 // import GoogleSiteVerification from '@/components/seo/GoogleSiteVerification.jsx';
 
@@ -12,7 +13,7 @@ import Home from '@/pages/menu/Home.jsx';
 import { Project1 } from '@/pages/menu/Project1.jsx';
 import { Project2 } from '@/pages/menu/Project2.jsx';
 import { Project3 } from '@/pages/menu/Project3.jsx';
-import { About } from '@/pages/menu/About.jsx';
+import { About    } from '@/pages/menu/About.jsx';
 import StaticBypass from "@/components/util/StaticBypass.jsx";
 import PageNotFound from '@/pages/service/PageNotFound.jsx';
 // import CatchAllRoute from '@/components/util/CatchAllRoute.jsx';
@@ -28,6 +29,7 @@ const AppLayout = () => {
   return (
     <div className="app">
       <Canonical url={`https://react-js-template.vercel.app${location.pathname}`} />
+      <OGBypassScript />
       {/*<GoogleAnalytics id="G-RZHR947YVN" />*/}
       {/*<GoogleSiteVerification code="Gq9vrXtN91P1JteGFo-xrlLKT0PR8u-4P4xs21oUr8Y" />*/}
 
