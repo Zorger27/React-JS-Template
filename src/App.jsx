@@ -41,7 +41,7 @@ const AppLayout = () => {
           <Route path="/project2" element={<Project2 />} />
           <Route path="/project3" element={<Project3 />} />
           <Route path="/about" element={<About />} />
-          {/*<Route path="/404" element={<PageNotFound />} />*/}
+          <Route path="/404" element={<PageNotFound />} />
           {/*<Route path="*" element={<PageNotFound />} />*/}
 
           {/* Обработка неизвестных маршрутов */}
