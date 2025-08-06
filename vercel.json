@@ -1,14 +1,8 @@
 {
   "version": 2,
-  "routes": [
-    {
-      "src": "/ogimage/about\\.jpg",
-      "dest": "/ogimage/about.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
+  "rewrites": [
+    { "source": "/ogimage/:path*", "destination": "/ogimage/:path*" },
+    { "source": "/:path*", "destination": "/index.html" }
   ],
   "cleanUrls": false
 }
