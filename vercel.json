@@ -1,9 +1,14 @@
 {
   "version": 2,
   "rewrites": [
-    { "source": "/ogimage/about.jpg", "destination": "/ogimage/about.html" },
-    { "source": "/ogimage/:path*", "destination": "/ogimage/:path*" },
-    { "source": "/:path*", "destination": "/index.html" }
+    {
+      "source": "/ogimage/about.jpg",
+      "destination": "/ogimage/about.html"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/index.html"
+    }
   ],
   "cleanUrls": false
 }
