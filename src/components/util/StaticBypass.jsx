@@ -25,7 +25,7 @@ const StaticBypass = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#f0f0f0',
+        // backgroundColor: '#f0f0f0',
         margin: 0,
         padding: 0
       }}>
@@ -71,6 +71,7 @@ const StaticBypass = () => {
         width: '100vw',
         height: '100vh',
         display: 'flex',
+        margin: '1rem',
         justifyContent: 'center',
         alignItems: 'center',
         background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
