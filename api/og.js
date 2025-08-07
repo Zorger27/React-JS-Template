@@ -202,8 +202,13 @@ export default function handler(request) {
   <link rel="canonical" href="https://react-js-template.vercel.app${pathname}">
   
   <script>
+    // Отладочная информация (удалите в продакшене)
+    console.log('User Agent:', navigator.userAgent);
+    console.log('Language detected:', '${language}');
+    console.log('Accept-Language:', '${acceptLanguage}');
+    
     // Перенаправляем на React приложение только для обычных пользователей
-    if (!/bot|crawler|spider|crawling|facebookexternalhit|twitterbot|linkedinbot|slackbot|whatsapp|telegram|pinterest/i.test(navigator.userAgent)) {
+    if (!/bot|crawler|spider|crawling|facebookexternalhit|twitterbot|linkedinbot|slackbot|whatsapp|telegram|pinterest|discord/i.test(navigator.userAgent)) {
       const targetUrl = 'https://react-js-template.vercel.app${pathname === '/' ? '' : pathname}?spa=true&lang=${language}';
       window.location.replace(targetUrl);
     }
