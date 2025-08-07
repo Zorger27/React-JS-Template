@@ -1,9 +1,12 @@
 {
   "version": 2,
   "rewrites": [
-    { "source": "/ogimage/:path*", "destination": "/ogimage/:path*"},
     {
-      "source": "/(.*)",
+      "source": "/ogimage/:path*",
+      "destination": "/ogimage/:path*"
+    },
+    {
+      "source": "/",
       "destination": "/api/og",
       "has": [
         {
@@ -13,7 +16,21 @@
         }
       ]
     },
-    { "source": "/:path*", "destination": "/index.html"}
+    {
+      "source": "/((?!api|ogimage|_next|favicon\\.ico|robots\\.txt).*)",
+      "destination": "/api/og",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(bot|crawler|spider|crawling|facebookexternalhit|twitterbot|linkedinbot|slackbot|whatsapp).*"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ],
   "cleanUrls": false
 }
