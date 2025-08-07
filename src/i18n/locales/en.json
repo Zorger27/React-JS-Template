@@ -62,6 +62,10 @@
     "info404": "Page not found, back to main page",
     "btn404": "Back to MAIN page"
   },
+  "page": {
+    "name": "Page",
+    "disc": "A Progressive Web App built with React and Vite"
+  },
   "extra": {
     "loading": "loading...",
     "detail": "For more details see here ⇢",

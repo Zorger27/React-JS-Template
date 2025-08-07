@@ -28,7 +28,6 @@ const StaticBypass = () => {
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#f0f0f0',
-        // backgroundColor: 'transparent',
         margin: 0,
         padding: 0
       }}>
@@ -51,19 +50,43 @@ const StaticBypass = () => {
     const getOGContent = (filename) => {
       if (filename === 'about.jpg') {
         return {
-          title: 'About Us',
-          subtitle: 'React Template Project'
+          title: t('about.nameOG'),
+          subtitle: t('about.disc')
+        };
+      }
+      if (filename === 'home.jpg') {
+        return {
+          title: t('home.name'),
+          subtitle: t('home.disc')
+        };
+      }
+      if (filename === 'page404.jpg') {
+        return {
+          title: t('page404.name'),
+          subtitle: t('page404.disc')
         };
       }
       if (filename === 'project1.jpg') {
         return {
-          title: 'Project 1',
-          subtitle: 'Amazing React Project'
+          title: t('project1.name'),
+          subtitle: t('project1.disc')
+        };
+      }
+      if (filename === 'project2.jpg') {
+        return {
+          title: t('project2.name'),
+          subtitle: t('project2.disc')
+        };
+      }
+      if (filename === 'project3.jpg') {
+        return {
+          title: t('project3.name'),
+          subtitle: t('project3.disc')
         };
       }
       return {
-        title: 'Page',
-        subtitle: 'React Template'
+        title: t('page.name'),
+        subtitle: t('page.disc')
       };
     };
 
@@ -77,7 +100,6 @@ const StaticBypass = () => {
         justifyContent: 'center',
         alignItems: 'center',
         background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        // background: 'transparent',
         fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
       }}>
         <div style={{

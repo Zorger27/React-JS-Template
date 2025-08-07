@@ -62,6 +62,10 @@
     "info404": "Página no encontrada, volver a la página principal",
     "btn404": "Volver a la página PRINCIPAL"
   },
+  "page": {
+    "name": "Página",
+    "disc": "Una aplicación web progresiva creada con React y Vite"
+  },
   "extra": {
     "loading": "sobreprima...",
     "detail": "Para más detalles ver aquí ⇢",
