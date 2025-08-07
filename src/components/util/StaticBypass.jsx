@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const StaticBypass = () => {
+  const { t } = useTranslation();
   const { filename } = useParams();
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -25,8 +27,8 @@ const StaticBypass = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        // backgroundColor: '#f0f0f0',
-        backgroundColor: 'transparent',
+        backgroundColor: '#f0f0f0',
+        // backgroundColor: 'transparent',
         margin: 0,
         padding: 0
       }}>
@@ -74,8 +76,8 @@ const StaticBypass = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        // background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        background: 'transparent',
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        // background: 'transparent',
         fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
       }}>
         <div style={{
@@ -148,7 +150,7 @@ const StaticBypass = () => {
       height: '100vh',
       fontSize: '18px'
     }}>
-      Loading...
+      {t('extra.loading')}
     </div>
   );
 };
