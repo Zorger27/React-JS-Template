@@ -1,6 +1,5 @@
 import React from 'react';
 import {BrowserRouter as Router, Routes, Route, useLocation, Navigate} from 'react-router-dom';
-// import {BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom';
 import { HelmetProvider } from '@dr.pogodin/react-helmet';
 import StaticBypass from "@/components/util/StaticBypass.jsx";
 import Canonical from '@/components/seo/Canonical.jsx';
@@ -40,7 +39,6 @@ const AppLayout = () => {
           <Route path="/404" element={<PageNotFound />} />
 
           {/* Обработка неизвестных маршрутов */}
-          {/*<Route path="*" element={<PageNotFound />} />*/}
           <Route path="*" element={<Navigate to="/404" replace />} />
 
         </Routes>
