@@ -26,6 +26,7 @@ const StaticBypass = () => {
         justifyContent: 'center',
         alignItems: 'center',
         // backgroundColor: '#f0f0f0',
+        backgroundColor: 'transparent',
         margin: 0,
         padding: 0
       }}>
@@ -73,7 +74,8 @@ const StaticBypass = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        // background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        background: 'transparent',
         fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
       }}>
         <div style={{
