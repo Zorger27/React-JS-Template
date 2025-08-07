@@ -1,8 +1,19 @@
 {
   "version": 2,
   "rewrites": [
-    { "source": "/ogimage/:path*", "destination": "/ogimage/:path*" },
-    { "source": "/:path*", "destination": "/index.html" }
+    { "source": "/ogimage/:path*", "destination": "/ogimage/:path*"},
+    {
+      "source": "/(.*)",
+      "destination": "/api/og",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(bot|crawler|spider|crawling|facebookexternalhit|twitterbot|linkedinbot|slackbot|whatsapp).*"
+        }
+      ]
+    },
+    { "source": "/:path*", "destination": "/index.html"}
   ],
   "cleanUrls": false
 }
