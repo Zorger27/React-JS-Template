@@ -6,6 +6,11 @@ export default function handler(request) {
   const url = new URL(request.url);
   const pathname = url.pathname;
 
+  // ОТЛАДКА: принудительно обрабатываем главную страницу
+  if (pathname === '/') {
+    console.log('HOME PAGE DETECTED');
+  }
+
   // Определяем язык из заголовков браузера
   const acceptLanguage = request.headers.get('accept-language') || '';
   const langParam = url.searchParams.get('lang');
