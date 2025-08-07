@@ -11,10 +11,7 @@ const StaticBypass = () => {
   const [imageError, setImageError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  /**
-   * Мемоизированная функция получения контента для OG изображений
-   * Оптимизация: вычисляется только при изменении filename или t
-   */
+  // Мемоизированная функция получения контента для OG изображений (вычисляется только при изменении filename или t)
   const ogContent = useMemo(() => {
     const contentMap = {
       'about.jpg': {
@@ -50,9 +47,7 @@ const StaticBypass = () => {
     };
   }, [filename, t]);
 
-  /**
-   * Мемоизированные стили для оптимизации рендеринга
-   */
+  // Мемоизированные стили для оптимизации рендеринга
   const styles = useMemo(() => ({
     // Контейнер для изображения
     imageContainer: {
@@ -139,10 +134,7 @@ const StaticBypass = () => {
     }
   }), []);
 
-  /**
-   * Эффект для загрузки изображения
-   * Оптимизация: добавлена очистка ресурсов и более точное отслеживание состояния
-   */
+  // Эффект для загрузки изображения (очистка ресурсов, отслеживание состояния)
   useEffect(() => {
     if (!filename) {
       setImageError(true);
@@ -178,9 +170,7 @@ const StaticBypass = () => {
     };
   }, [filename]);
 
-  /**
-   * Рендер загруженного изображения
-   */
+  // Рендер загруженного изображения
   if (imageLoaded) {
     return (
       <div style={styles.imageContainer}>
@@ -194,9 +184,7 @@ const StaticBypass = () => {
     );
   }
 
-  /**
-   * Рендер fallback CSS-генерируемого OG изображения
-   */
+  // Рендер fallback CSS-генерируемого OG изображения
   if (imageError) {
     return (
       <div style={styles.fallbackContainer}>
@@ -231,10 +219,7 @@ const StaticBypass = () => {
     );
   }
 
-  /**
-   * Рендер состояния загрузки
-   * Показывается, пока определяется доступность изображения
-   */
+  // Рендер состояния загрузки (показывается, пока определяется доступность изображения)
   if (isLoading) {
     return (
       <div style={styles.loadingContainer}>
