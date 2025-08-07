@@ -1,7 +1,8 @@
 import React from 'react';
-// import {BrowserRouter as Router, Routes, Route, useLocation, Navigate} from 'react-router-dom';
-import {BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, useLocation, Navigate} from 'react-router-dom';
+// import {BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom';
 import { HelmetProvider } from '@dr.pogodin/react-helmet';
+import StaticBypass from "@/components/util/StaticBypass.jsx";
 import Canonical from '@/components/seo/Canonical.jsx';
 // import GoogleAnalytics from '@/components/seo/GoogleAnalytics.jsx';
 // import GoogleSiteVerification from '@/components/seo/GoogleSiteVerification.jsx';
@@ -15,7 +16,6 @@ import { Project3 } from '@/pages/menu/Project3.jsx';
 import { About    } from '@/pages/menu/About.jsx';
 import PageNotFound from '@/pages/service/PageNotFound.jsx';
 import '@/App.scss';
-import StaticBypass from "@/components/util/StaticBypass.jsx";
 
 const AppLayout = () => {
   const location = useLocation();
@@ -29,7 +29,6 @@ const AppLayout = () => {
       {/*<GoogleSiteVerification code="Gq9vrXtN91P1JteGFo-xrlLKT0PR8u-4P4xs21oUr8Y" />*/}
 
       {!isNotFound && !isOgImage && <Header />}
-      {/*<Header />*/}
       <main className="main">
         <Routes>
           <Route path="/ogimage/:filename" element={<StaticBypass />}/>
@@ -42,12 +41,10 @@ const AppLayout = () => {
           <Route path="*" element={<PageNotFound />} />
 
           {/* Обработка неизвестных маршрутов */}
-          {/*<Route path="*" element={<Navigate to="/404" replace />} />*/}
+          <Route path="*" element={<Navigate to="/404" replace />} />
 
-          {/*<Route path="*" element={<CatchAllRoute />} />*/}
         </Routes>
       </main>
-      {/*<Footer />*/}
       {!isNotFound && !isOgImage && <Footer />}
     </div>
   );
