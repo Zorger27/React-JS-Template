@@ -3,9 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import '@/pages/menu/Home.scss';
 import {Helmet} from "@dr.pogodin/react-helmet";
+import {useSpaCleanup} from "@/hooks/useSpaCleanup.js";
 
 const Home = () => {
   const { t } = useTranslation();
+  useSpaCleanup();
   return (
     <div className="home">
       <Helmet>

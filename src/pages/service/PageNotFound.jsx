@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import '@/pages/service/PageNotFound.scss';
 import {useTranslation} from "react-i18next";
 import {Helmet} from "@dr.pogodin/react-helmet";
+import {useSpaCleanup} from "@/hooks/useSpaCleanup.js";
 
 const PageNotFound = () => {
 const { t } = useTranslation();
+useSpaCleanup();
   return (
     <div className="page-not-found">
       <Helmet>

@@ -3,9 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import '@/pages/menu/About.scss';
 import {Helmet} from "@dr.pogodin/react-helmet";
+import { useSpaCleanup } from '@/hooks/useSpaCleanup';
 
 export const About = () => {
   const { t } = useTranslation();
+  useSpaCleanup();
   const [showMore, setShowMore] = useState(false);
   const [tableView, setTableView] = useState(false);
   const infoList = useSelector((state) => state.info);
