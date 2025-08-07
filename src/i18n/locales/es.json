@@ -67,7 +67,7 @@
     "disc": "Una aplicación web progresiva creada con React y Vite"
   },
   "extra": {
-    "loading": "sobreprima...",
+    "loading": "Cargando...",
     "detail": "Para más detalles ver aquí ⇢",
     "back": "Volver a la página principal",
     "tableView": "Vista de tabla",

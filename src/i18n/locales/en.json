@@ -67,7 +67,7 @@
     "disc": "A Progressive Web App built with React and Vite"
   },
   "extra": {
-    "loading": "loading...",
+    "loading": "Loading...",
     "detail": "For more details see here ⇢",
     "back": "Return to the main page",
     "tableView": "Table view",
