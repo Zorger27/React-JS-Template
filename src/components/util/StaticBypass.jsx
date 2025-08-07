@@ -139,7 +139,7 @@ const StaticBypass = () => {
             zIndex: 2
           }}>
             <h1 style={{
-              fontSize: '72px',
+              fontSize: '65px',
               fontWeight: '800',
               color: '#333',
               marginBottom: '20px',
@@ -151,8 +151,10 @@ const StaticBypass = () => {
               {content.title}
             </h1>
             <p style={{
-              fontSize: '32px',
+              fontSize: '30px',
               color: '#666',
+              marginLeft: '10px',
+              marginRight: '10px',
               fontWeight: '400'
             }}>
               {content.subtitle}
@@ -170,7 +172,7 @@ const StaticBypass = () => {
       justifyContent: 'center',
       alignItems: 'center',
       height: '100vh',
-      fontSize: '18px'
+      fontSize: '28px'
     }}>
       {t('extra.loading')}
     </div>
