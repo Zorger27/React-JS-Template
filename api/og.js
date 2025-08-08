@@ -8,6 +8,14 @@ export default function handler(request) {
 
   const url = new URL(request.url);
   const pathname = url.pathname;
+  const userAgent = request.headers.get('user-agent') || '';
+
+  // Добавляем логирование для отладки
+  console.log('OG Handler called:', {
+    pathname,
+    userAgent: userAgent.substring(0, 100), // первые 100 символов
+    siteUrl
+  });
 
   // Определяем язык из заголовков браузера
   const acceptLanguage = request.headers.get('accept-language') || '';
@@ -204,14 +212,20 @@ export default function handler(request) {
   <meta name="author" content="React JS Template">
   <link rel="canonical" href="${siteUrl}${pathname}">
   
+  <!-- Отладочные комментарии (удалите в продакшене) -->
+  <!-- User-Agent: ${userAgent.substring(0, 200)} -->
+  <!-- Pathname: ${pathname} -->
+  <!-- Site URL: ${siteUrl} -->
+  
   <script>
     // Отладочная информация (удалите в продакшене)
     console.log('User Agent:', navigator.userAgent);
     console.log('Language detected:', '${language}');
     console.log('Accept-Language:', '${acceptLanguage}');
+    console.log('Pathname:', '${pathname}');
     
     // Перенаправляем на React приложение только для обычных пользователей
-    if (!/bot|crawler|spider|crawling|facebookexternalhit|twitterbot|linkedinbot|slackbot|whatsapp|telegram|pinterest|discord/i.test(navigator.userAgent)) {
+    if (!/bot|crawler|spider|crawling|facebookexternalhit|twitterbot|linkedinbot|slackbot|whatsapp|telegram|pinterest|discord|facebot/i.test(navigator.userAgent)) {
       const targetUrl = '${siteUrl}${pathname === '/' ? '' : pathname}?spa=true&lang=${language}';
       window.location.replace(targetUrl);
     }
