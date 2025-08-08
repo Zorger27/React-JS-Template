@@ -7,7 +7,7 @@
     },
     {
       "source": "/",
-      "destination": "/api/og",
+      "destination": "/api/og?path=/",
       "has": [
         {
           "type": "header",
@@ -18,7 +18,7 @@
     },
     {
       "source": "/((?!api|ogimage|_next|favicon\\.ico|robots\\.txt|sitemap\\.xml).*)",
-      "destination": "/api/og",
+      "destination": "/api/og?path=$1",
       "has": [
         {
           "type": "header",
