@@ -3,6 +3,9 @@ export const config = {
 }
 
 export default function handler(request) {
+  // Получаем URL сайта из переменных окружения Vercel
+  const siteUrl = process.env.SITE_URL;
+
   const url = new URL(request.url);
   const pathname = url.pathname;
 
@@ -123,43 +126,43 @@ export default function handler(request) {
         return {
           title: t.home.name,
           description: t.home.disc,
-          image: 'https://react-js-template.vercel.app/ogimage/home.jpg'
+          image: `${siteUrl}/ogimage/home.jpg`
         };
       case '/about':
         return {
           title: t.about.nameOG,
           description: t.about.disc,
-          image: 'https://react-js-template.vercel.app/ogimage/about.jpg'
+          image: `${siteUrl}/ogimage/about.jpg`
         };
       case '/project1':
         return {
           title: t.project1.name,
           description: t.project1.disc,
-          image: 'https://react-js-template.vercel.app/ogimage/project1.jpg'
+          image: `${siteUrl}/ogimage/project1.jpg`
         };
       case '/project2':
         return {
           title: t.project2.name,
           description: t.project2.disc,
-          image: 'https://react-js-template.vercel.app/ogimage/project2.jpg'
+          image: `${siteUrl}/ogimage/project2.jpg`
         };
       case '/project3':
         return {
           title: t.project3.name,
           description: t.project3.disc,
-          image: 'https://react-js-template.vercel.app/ogimage/project3.jpg'
+          image: `${siteUrl}/ogimage/project3.jpg`
         };
       case '/404':
         return {
           title: t.page404.name,
           description: t.page404.disc,
-          image: 'https://react-js-template.vercel.app/ogimage/page404.jpg'
+          image: `${siteUrl}/ogimage/page404.jpg`
         };
       default:
         return {
           title: t.page404.name,
           description: t.page404.disc,
-          image: 'https://react-js-template.vercel.app/ogimage/page404.jpg'
+          image: `${siteUrl}/ogimage/page404.jpg`
         };
     }
   };
@@ -185,7 +188,7 @@ export default function handler(request) {
   <meta property="og:title" content="${content.title}">
   <meta property="og:description" content="${content.description}">
   <meta property="og:image" content="${content.image}">
-  <meta property="og:url" content="https://react-js-template.vercel.app${pathname}">
+  <meta property="og:url" content="${siteUrl}${pathname}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="React JS Template">
   <meta property="og:locale" content="${locales[language]}">
@@ -199,7 +202,7 @@ export default function handler(request) {
   <!-- Дополнительные meta теги -->
   <meta name="robots" content="index, follow">
   <meta name="author" content="React JS Template">
-  <link rel="canonical" href="https://react-js-template.vercel.app${pathname}">
+  <link rel="canonical" href="${siteUrl}${pathname}">
   
   <script>
     // Отладочная информация (удалите в продакшене)
@@ -209,7 +212,7 @@ export default function handler(request) {
     
     // Перенаправляем на React приложение только для обычных пользователей
     if (!/bot|crawler|spider|crawling|facebookexternalhit|twitterbot|linkedinbot|slackbot|whatsapp|telegram|pinterest|discord/i.test(navigator.userAgent)) {
-      const targetUrl = 'https://react-js-template.vercel.app${pathname === '/' ? '' : pathname}?spa=true&lang=${language}';
+      const targetUrl = '${siteUrl}${pathname === '/' ? '' : pathname}?spa=true&lang=${language}';
       window.location.replace(targetUrl);
     }
   </script>
@@ -229,7 +232,7 @@ export default function handler(request) {
     <noscript>
       <div style="margin-top: 40px; padding: 20px; background-color: #f8f9fa; border-radius: 8px; max-width: 400px; margin-left: auto; margin-right: auto;">
         <p style="margin-bottom: 15px; color: #333;">JavaScript is required to view this site.</p>
-        <a href="https://react-js-template.vercel.app${pathname}" 
+        <a href="${siteUrl}${pathname}" 
            style="color: #667eea; text-decoration: none; font-weight: 500; border: 2px solid #667eea; padding: 10px 20px; border-radius: 5px; display: inline-block;">
           Continue to site →
         </a>
