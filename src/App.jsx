@@ -23,9 +23,9 @@ const AppLayout = () => {
 
   return (
     <div className="app">
-      <Canonical url={`https://react-js-template.vercel.app${location.pathname}`} />
-      {/*<GoogleAnalytics id="G-RZHR947YVN" />*/}
-      {/*<GoogleSiteVerification code="Gq9vrXtN91P1JteGFo-xrlLKT0PR8u-4P4xs21oUr8Y" />*/}
+      <Canonical url={`${import.meta.env.VITE_SITE_URL}${location.pathname}`} />
+      {/*<GoogleAnalytics id={import.meta.env.VITE_GOOGLE_ANALYTICS_ID} />*/}
+      {/*<GoogleSiteVerification code={import.meta.env.VITE_GOOGLE_SITE_VERIFICATION_CODE} />*/}
 
       {!isNotFound && !isOgImage && <Header />}
       <main className="main">

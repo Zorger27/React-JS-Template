@@ -7,7 +7,10 @@ import {useSpaCleanup} from "@/hooks/useSpaCleanup.js";
 
 export const Project3 = () => {
   const { t } = useTranslation();
+  const siteUrl = import.meta.env.VITE_SITE_URL;
+
   useSpaCleanup();
+
   return (
     <div className="project3">
       <Helmet>
@@ -17,15 +20,15 @@ export const Project3 = () => {
         {/* Open Graph meta tags */}
         <meta property="og:title" content={t('project3.name')} />
         <meta property="og:description" content={t('project3.disc')} />
-        <meta property="og:image" content="https://react-js-template.vercel.app/ogimage/project3.jpg" />
-        <meta property="og:url" content="https://react-js-template.vercel.app" />
+        <meta property="og:image" content={`${siteUrl}/ogimage/project3.jpg`} />
+        <meta property="og:url" content={`${siteUrl}/project3`} />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="https://react-js-template.vercel.app" />
+        <meta property="og:site_name" content={siteUrl} />
 
         {/* Twitter meta tags */}
         <meta property="twitter:title" content={t('project3.name')} />
         <meta property="twitter:description" content={t('project3.disc')} />
-        <meta property="twitter:image" content="https://react-js-template.vercel.app/ogimage/project3.jpg" />
+        <meta property="twitter:image" content={`${siteUrl}/ogimage/project3.jpg`} />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <div className="container">

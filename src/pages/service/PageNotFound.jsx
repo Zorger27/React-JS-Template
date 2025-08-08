@@ -6,8 +6,11 @@ import {Helmet} from "@dr.pogodin/react-helmet";
 import {useSpaCleanup} from "@/hooks/useSpaCleanup.js";
 
 const PageNotFound = () => {
-const { t } = useTranslation();
-useSpaCleanup();
+  const { t } = useTranslation();
+  const siteUrl = import.meta.env.VITE_SITE_URL;
+
+  useSpaCleanup();
+
   return (
     <div className="page-not-found">
       <Helmet>
@@ -17,15 +20,15 @@ useSpaCleanup();
         {/* Open Graph meta tags */}
         <meta property="og:title" content={t('page404.name')} />
         <meta property="og:description" content={t('page404.disc')} />
-        <meta property="og:image" content="https://react-js-template.vercel.app/ogimage/page404.jpg" />
-        <meta property="og:url" content="https://react-js-template.vercel.app" />
+        <meta property="og:image" content={`${siteUrl}/ogimage/page404.jpg`} />
+        <meta property="og:url" content={`${siteUrl}/404`} />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="https://react-js-template.vercel.app" />
+        <meta property="og:site_name" content={siteUrl} />
 
         {/* Twitter meta tags */}
         <meta property="twitter:title" content={t('page404.name')} />
         <meta property="twitter:description" content={t('page404.disc')} />
-        <meta property="twitter:image" content="https://react-js-template.vercel.app/ogimage/page404.jpg" />
+        <meta property="twitter:image" content={`${siteUrl}/ogimage/page404.jpg`} />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <div className="inner">
