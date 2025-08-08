@@ -7,17 +7,13 @@ export default function handler(request) {
   const siteUrl = process.env.SITE_URL;
 
   const url = new URL(request.url);
-  // Получаем путь из query параметра или из pathname
-  const pathFromQuery = url.searchParams.get('path');
-  const pathname = pathFromQuery || url.pathname.replace('/api/og', '') || '/';
+  const pathname = url.pathname;
   const userAgent = request.headers.get('user-agent') || '';
 
   // Добавляем логирование для отладки
   console.log('OG Handler called:', {
-    originalPathname: url.pathname,
-    pathFromQuery,
-    finalPathname: pathname,
-    userAgent: userAgent.substring(0, 100),
+    pathname,
+    userAgent: userAgent.substring(0, 100), // первые 100 символов
     siteUrl
   });
 
@@ -217,13 +213,17 @@ export default function handler(request) {
   <link rel="canonical" href="${siteUrl}${pathname}">
   
   <!-- Отладочные комментарии (удалите в продакшене) -->
-  <!-- Original Pathname: ${url.pathname} -->
-  <!-- Path from Query: ${pathFromQuery} -->
-  <!-- Final Pathname: ${pathname} -->
   <!-- User-Agent: ${userAgent.substring(0, 200)} -->
+  <!-- Pathname: ${pathname} -->
   <!-- Site URL: ${siteUrl} -->
   
   <script>
+    // Отладочная информация (удалите в продакшене)
+    console.log('User Agent:', navigator.userAgent);
+    console.log('Language detected:', '${language}');
+    console.log('Accept-Language:', '${acceptLanguage}');
+    console.log('Pathname:', '${pathname}');
+    
     // Перенаправляем на React приложение только для обычных пользователей
     if (!/bot|crawler|spider|crawling|facebookexternalhit|twitterbot|linkedinbot|slackbot|whatsapp|telegram|pinterest|discord|facebot/i.test(navigator.userAgent)) {
       const targetUrl = '${siteUrl}${pathname === '/' ? '' : pathname}?spa=true&lang=${language}';
