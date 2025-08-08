@@ -25,7 +25,7 @@ export default function handler(request) {
     // Украинский
     uk: {
       home: {
-        name: 'Головна сторінка',
+        name: 'Мої Проекти',
         disc: 'Це головна сторінка проекту'
       },
       about: {
@@ -55,7 +55,7 @@ export default function handler(request) {
     // Английский
     en: {
       home: {
-        name: 'Main page',
+        name: 'My Projects',
         disc: 'This is the Project\'s Main Page'
       },
       about: {
@@ -85,7 +85,7 @@ export default function handler(request) {
     // Испанский
     es: {
       home: {
-        name: 'Página principal',
+        name: 'Mis proyectos',
         disc: 'Esta es la página principal del proyecto'
       },
       about: {
