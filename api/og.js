@@ -1,15 +1,18 @@
 export default function handler(req, res) {
   try {
+    // Логируем, чтобы видеть в Vercel Logs
+    console.log("OG API CALLED FOR", req.url, "UA:", req.headers["user-agent"]);
+
     const siteUrl = process.env.VITE_SITE_URL || "https://react-js-template.vercel.app";
     const path = req.url || "/";
 
-    console.log("OG API CALLED FOR", req.url, "UA:", req.headers["user-agent"]);
-
+    // Дефолтные OG-данные (главная)
     let title = "React JS Template";
     let description = "Welcome to the React JS Template home page.";
     let image = `${siteUrl}/ogimage/home.jpg`;
     let pageUrl = siteUrl;
 
+    // Логика для страниц
     if (path.includes("/project1")) {
       title = "Project 1";
       description = "Description for Project 1.";
@@ -33,10 +36,11 @@ export default function handler(req, res) {
     } else if (path.includes("/404") || path.includes("/page404")) {
       title = "Page Not Found";
       description = "The page you are looking for does not exist.";
-      image = `${siteUrl}/ogimage/page404.jpg`;
+      image = `${siteUrl}/ogimage/404.jpg`;
       pageUrl = `${siteUrl}/404`;
     }
 
+    // Формируем полный HTML
     const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,16 +62,21 @@ export default function handler(req, res) {
 <body>
 <h1>${title}</h1>
 <p>${description}</p>
+<hr />
+<p>DEBUG: Requested URL = ${path}</p>
+<p>DEBUG: User-Agent = ${req.headers["user-agent"]}</p>
 </body>
 </html>`;
 
-    res.statusCode = 200; // <-- важно!
+    // Отдаём
+    res.statusCode = 200;
     res.setHeader("Content-Type", "text/html; charset=utf-8");
     res.setHeader("Cache-Control", "no-cache");
-    res.end(html); // <-- сразу полный HTML
+    res.end(html);
   } catch (err) {
-    console.error(err);
+    console.error("OG API ERROR:", err);
     res.statusCode = 500;
+    res.setHeader("Content-Type", "text/plain; charset=utf-8");
     res.end("Internal Server Error");
   }
 }

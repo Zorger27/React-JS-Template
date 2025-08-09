@@ -20,7 +20,7 @@ const PageNotFound = () => {
         {/* Open Graph meta tags */}
         <meta property="og:title" content={t('page404.name')} />
         <meta property="og:description" content={t('page404.disc')} />
-        <meta property="og:image" content={`${siteUrl}/ogimage/page404.jpg`} />
+        <meta property="og:image" content={`${siteUrl}/ogimage/404.jpg`} />
         <meta property="og:url" content={`${siteUrl}/404`} />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content={siteUrl} />
@@ -28,7 +28,7 @@ const PageNotFound = () => {
         {/* Twitter meta tags */}
         <meta property="twitter:title" content={t('page404.name')} />
         <meta property="twitter:description" content={t('page404.disc')} />
-        <meta property="twitter:image" content={`${siteUrl}/ogimage/page404.jpg`} />
+        <meta property="twitter:image" content={`${siteUrl}/ogimage/404.jpg`} />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <div className="inner">
