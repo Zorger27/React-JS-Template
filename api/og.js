@@ -6,16 +6,11 @@ export default function handler(req, res) {
     const siteUrl = process.env.VITE_SITE_URL;
     const path = req.url || "/";
 
-    // // Дефолтные OG-данные (главная)
-    // let title = "My Projects (React Vite PWA Template)";
-    // let description = "This is the Project's Main Page (created by Anatolii Zorin)";
-    // let image = `${siteUrl}/ogimage/home.jpg`;
-    // let pageUrl = siteUrl;
-
-    let title;
-    let description;
-    let image;
-    let pageUrl;
+    // Дефолтные OG-данные (главная)
+    let title = "My Projects (React Vite PWA Template)";
+    let description = "This is the Project's Main Page (created by Anatolii Zorin)";
+    let image = `${siteUrl}/ogimage/home.jpg`;
+    let pageUrl = siteUrl;
 
     // Логика для страниц
     if (path.includes("/project1")) {
@@ -38,11 +33,6 @@ export default function handler(req, res) {
       description = "Detailed project information (created by Anatolii Zorin)";
       image = `${siteUrl}/ogimage/about.jpg`;
       pageUrl = `${siteUrl}/about`;
-    } else if (path.includes("/")) {
-      title = "Examination";
-      description = "Examination (created by Anatolii Zorin)";
-      image = `${siteUrl}/ogimage/home.jpg`;
-      pageUrl = {siteUrl};
     } else if (path.includes("/404")) {
       title = "Page Not Found";
       description = "Page 404 - page not found (created by Anatolii Zorin)";
