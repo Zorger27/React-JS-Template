@@ -1,4 +1,13 @@
 {
-  "source": "/((?!api|ogimage|_next|favicon\\.ico|robots\\.txt|sitemap\\.xml).*)",
-  "destination": "/api/og"
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/ogimage/:path*",
+      "destination": "/ogimage/:path*"
+    },
+    {
+      "source": "/((?!_next|favicon\\.ico|robots\\.txt|sitemap\\.xml).*)",
+      "destination": "/api/og"
+    }
+  ]
 }
