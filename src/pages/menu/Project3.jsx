@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import {Helmet} from "@dr.pogodin/react-helmet";
 import {useSpaCleanup} from "@/hooks/useSpaCleanup.js";
 import ToggleFooterButton from "@/components/util/ToggleFooterButton.jsx";
+import ToggleFullScreen from "@/components/util/ToggleFullScreen.jsx";
 
 export const Project3 = () => {
   const { t } = useTranslation();
@@ -37,6 +38,7 @@ export const Project3 = () => {
           <i className="fa fa-arrow-circle-left"></i></Link>
           {t('project3.name')}
           <ToggleFooterButton />
+          <ToggleFullScreen />
         </h1>
         <hr className="custom-line" />
       </div>
