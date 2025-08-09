@@ -34,7 +34,7 @@ export default function handler(req, res) {
     } else if (urlPath.includes("/404")) {
       title = "Page Not Found";
       description = "The page you are looking for does not exist.";
-      image = `${siteUrl}/ogimage/404.jpg`;
+      image = `${siteUrl}/ogimage/page404.jpg`;
       pageUrl = `${siteUrl}/404`;
     }
 
