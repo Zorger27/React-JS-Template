@@ -1,16 +1,14 @@
 export default function handler(req, res) {
   try {
-    // Определяем текущий путь
     const urlPath = req.url || "/";
     const siteUrl = process.env.VITE_SITE_URL || "https://react-js-template.vercel.app";
 
-    // Дефолтные OG-данные (для главной)
+    // Главная страница (по умолчанию)
     let title = "React JS Template";
-    let description = "This is the home page of the React JS Template project.";
+    let description = "Welcome to the React JS Template home page.";
     let image = `${siteUrl}/ogimage/home.jpg`;
     let pageUrl = siteUrl;
 
-    // Можно добавить логику для разных страниц
     if (urlPath.includes("/project1")) {
       title = "Project 1";
       description = "Description for Project 1.";
@@ -31,39 +29,37 @@ export default function handler(req, res) {
       description = "About this React JS Template.";
       image = `${siteUrl}/ogimage/about.jpg`;
       pageUrl = `${siteUrl}/about`;
-    } else if (urlPath.includes("/404")) {
+    } else if (urlPath.includes("/page404") || urlPath.includes("/404")) {
       title = "Page Not Found";
       description = "The page you are looking for does not exist.";
       image = `${siteUrl}/ogimage/page404.jpg`;
       pageUrl = `${siteUrl}/404`;
     }
 
-    // Генерируем полный HTML
     const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${title}</title>
-  <meta name="description" content="${description}" />
-  <meta property="og:title" content="${title}" />
-  <meta property="og:description" content="${description}" />
-  <meta property="og:image" content="${image}" />
-  <meta property="og:url" content="${pageUrl}" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="${siteUrl}" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="${title}" />
-  <meta name="twitter:description" content="${description}" />
-  <meta name="twitter:image" content="${image}" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>${title}</title>
+<meta name="description" content="${description}" />
+<meta property="og:title" content="${title}" />
+<meta property="og:description" content="${description}" />
+<meta property="og:image" content="${image}" />
+<meta property="og:url" content="${pageUrl}" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="${siteUrl}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="${title}" />
+<meta name="twitter:description" content="${description}" />
+<meta name="twitter:image" content="${image}" />
 </head>
 <body>
-  <h1>${title}</h1>
-  <p>${description}</p>
+<h1>${title}</h1>
+<p>${description}</p>
 </body>
 </html>`;
 
-    // Отдаём полный HTML с правильными заголовками
     res.statusCode = 200;
     res.setHeader("Content-Type", "text/html; charset=utf-8");
     res.setHeader("Cache-Control", "public, max-age=3600");
