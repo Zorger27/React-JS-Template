@@ -3,7 +3,7 @@ export default function handler(req, res) {
     // Логируем, чтобы видеть в Vercel Logs
     console.log("OG API CALLED FOR", req.url, "UA:", req.headers["user-agent"]);
 
-    const siteUrl = process.env.VITE_SITE_URL || "https://react-js-template.vercel.app";
+    const siteUrl = process.env.VITE_SITE_URL;
     const path = req.url || "/";
 
     // Дефолтные OG-данные (главная)
@@ -33,7 +33,7 @@ export default function handler(req, res) {
       description = "About this React JS Template.";
       image = `${siteUrl}/ogimage/about.jpg`;
       pageUrl = `${siteUrl}/about`;
-    } else if (path.includes("/404") || path.includes("/page404")) {
+    } else if (path.includes("/404")) {
       title = "Page Not Found";
       description = "The page you are looking for does not exist.";
       image = `${siteUrl}/ogimage/404.jpg`;
