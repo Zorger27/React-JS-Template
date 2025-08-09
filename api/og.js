@@ -3,6 +3,8 @@ export default function handler(req, res) {
     const siteUrl = process.env.VITE_SITE_URL || "https://react-js-template.vercel.app";
     const path = req.url || "/";
 
+    console.log("OG API CALLED FOR", req.url, "UA:", req.headers["user-agent"]);
+
     let title = "React JS Template";
     let description = "Welcome to the React JS Template home page.";
     let image = `${siteUrl}/ogimage/home.jpg`;
