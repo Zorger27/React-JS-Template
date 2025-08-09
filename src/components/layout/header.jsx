@@ -46,7 +46,7 @@ const Header = () => {
           <LanguageSwitcher></LanguageSwitcher>
         </div>
 
-        <div className="fullScreen">
+        <div className="full-screen">
           <ToggleFullScreen />
         </div>
       </div>

@@ -17,7 +17,7 @@ header {
     grid-template-rows: auto;
     grid-row-gap: 0;
     grid-auto-flow: column;
-    grid-template-areas: "logo language fullScreen";
+    grid-template-areas: "logo language fullscreen";
 
     .burger-menu {
       grid-area: burger-menu;
@@ -45,8 +45,8 @@ header {
       margin: 0 0.5rem;
     }
 
-    .fullScreen {
-      grid-area: fullScreen;
+    .full-screen {
+      grid-area: fullscreen;
       align-self: center;
       justify-self: center;
       align-items: center;
@@ -123,9 +123,9 @@ header {
     justify-content: center;
     .header-img {
       display: grid;
-      grid-template-columns: 1fr 4fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: auto;
-      grid-template-areas: "burger-menu language fullScreen logo";
+      grid-template-areas: "burger-menu language logo";
       grid-column-gap: 0.5rem;
       grid-row-gap: 0;
       grid-auto-flow: column;
@@ -162,11 +162,9 @@ header {
         justify-self: center;
       }
 
-      .fullScreen {
-        .fa.fa-expand-arrows-alt,
-        .fa.fa-compress-arrows-alt {
-          font-size: 2rem;
-        }
+      .full-screen {
+        grid-area: fullscreen;
+        display: none;
       }
 
       .logo {
