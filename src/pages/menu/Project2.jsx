@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import {Link} from "react-router-dom";
 import {Helmet} from "@dr.pogodin/react-helmet";
 import {useSpaCleanup} from "@/hooks/useSpaCleanup.js";
+import ToggleFooterButton from "@/components/util/ToggleFooterButton.jsx";
 
 export const Project2 = () => {
   const { t } = useTranslation();
@@ -33,7 +34,11 @@ export const Project2 = () => {
       </Helmet>
 
       <div className="container">
-        <h1><Link to="/" className="back-to-menu" title={t('extra.back')}><i className="fa fa-arrow-circle-left"></i></Link>{t('project2.name')}</h1>
+        <h1><Link to="/" className="back-to-menu" title={t('extra.back')}>
+          <i className="fa fa-arrow-circle-left"></i></Link>
+          {t('project2.name')}
+          <ToggleFooterButton />
+        </h1>
         <hr className="custom-line" />
       </div>
     </div>

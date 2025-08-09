@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import '@/pages/menu/About.scss';
 import {Helmet} from "@dr.pogodin/react-helmet";
 import { useSpaCleanup } from '@/hooks/useSpaCleanup';
+import ToggleFooterButton from "@/components/util/ToggleFooterButton.jsx";
 
 export const About = () => {
   const { t } = useTranslation();
@@ -37,6 +38,7 @@ export const About = () => {
       <div className="container">
         <h1>
           {t('about.title')}
+          <ToggleFooterButton />
           <i
             onClick={() => setTableView(!tableView)}
             title={tableView ? t('extra.listView') : t('extra.tableView')}

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import '@/pages/menu/Home.scss';
 import {Helmet} from "@dr.pogodin/react-helmet";
 import {useSpaCleanup} from "@/hooks/useSpaCleanup.js";
+import ToggleFooterButton from "@/components/util/ToggleFooterButton.jsx";
 
 const Home = () => {
   const { t } = useTranslation();
@@ -33,7 +34,10 @@ const Home = () => {
       </Helmet>
 
       <div className="container">
-        <h1>{t('home.title')}</h1>
+        <h1>
+          {t('home.title')}
+          <ToggleFooterButton />
+        </h1>
         <p className="flex-center">{t('home.description')}</p>
         <hr className="custom-line" />
         <div className="projects-grid">

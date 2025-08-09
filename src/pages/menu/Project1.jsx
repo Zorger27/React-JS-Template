@@ -4,6 +4,7 @@ import { Helmet } from '@dr.pogodin/react-helmet';
 import '@/pages/menu/Project1.scss';
 import {Link} from "react-router-dom";
 import {useSpaCleanup} from "@/hooks/useSpaCleanup.js";
+import ToggleFooterButton from "@/components/util/ToggleFooterButton.jsx";
 
 export const Project1 = () => {
   const { t } = useTranslation();
@@ -34,7 +35,9 @@ export const Project1 = () => {
 
       <div className="container">
         <h1><Link to="/" className="back-to-menu" title={t('extra.back')}>
-          <i className="fa fa-arrow-circle-left"></i></Link>{t('project1.name')}
+          <i className="fa fa-arrow-circle-left"></i></Link>
+          {t('project1.name')}
+          <ToggleFooterButton />
         </h1>
         <hr className="custom-line" />
       </div>
