@@ -4,6 +4,7 @@ import headerLogo from '@/assets/img/menu1/header-logo1.svg';
 import './header.scss';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '@/components/util/LanguageSwitcher.jsx'
+import ToggleFullScreen from "@/components/util/ToggleFullScreen.jsx";
 
 const Header = () => {
   const { t } = useTranslation();
@@ -43,6 +44,10 @@ const Header = () => {
 
         <div className="language">
           <LanguageSwitcher></LanguageSwitcher>
+        </div>
+
+        <div className="fullScreen">
+          <ToggleFullScreen />
         </div>
       </div>
 

@@ -5,7 +5,6 @@ import '@/pages/menu/Home.scss';
 import {Helmet} from "@dr.pogodin/react-helmet";
 import {useSpaCleanup} from "@/hooks/useSpaCleanup.js";
 import ToggleFooterButton from "@/components/util/ToggleFooterButton.jsx";
-import ToggleFullScreen from "@/components/util/ToggleFullScreen.jsx";
 
 const Home = () => {
   const { t } = useTranslation();
@@ -38,7 +37,6 @@ const Home = () => {
         <h1>
           {t('home.title')}
           <ToggleFooterButton />
-          <ToggleFullScreen />
         </h1>
         <p className="flex-center">{t('home.description')}</p>
         <hr className="custom-line" />

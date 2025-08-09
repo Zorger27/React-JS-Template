@@ -5,7 +5,6 @@ import '@/pages/menu/Project1.scss';
 import {Link} from "react-router-dom";
 import {useSpaCleanup} from "@/hooks/useSpaCleanup.js";
 import ToggleFooterButton from "@/components/util/ToggleFooterButton.jsx";
-import ToggleFullScreen from "@/components/util/ToggleFullScreen.jsx";
 
 export const Project1 = () => {
   const { t } = useTranslation();
@@ -39,7 +38,6 @@ export const Project1 = () => {
           <i className="fa fa-arrow-circle-left"></i></Link>
           {t('project1.name')}
           <ToggleFooterButton />
-          <ToggleFullScreen />
         </h1>
         <hr className="custom-line" />
       </div>
