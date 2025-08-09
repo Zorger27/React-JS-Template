@@ -7,35 +7,35 @@ export default function handler(req, res) {
     const path = req.url || "/";
 
     // Дефолтные OG-данные (главная)
-    let title = "React JS Template";
-    let description = "Welcome to the React JS Template home page.";
+    let title = "My Projects (React Vite PWA Template)";
+    let description = "This is the Project's Main Page (created by Anatolii Zorin)";
     let image = `${siteUrl}/ogimage/home.jpg`;
     let pageUrl = siteUrl;
 
     // Логика для страниц
     if (path.includes("/project1")) {
-      title = "Project 1";
-      description = "Description for Project 1.";
+      title = "Project № 1";
+      description = "Brief description of the first project (created by Anatolii Zorin)";
       image = `${siteUrl}/ogimage/project1.jpg`;
       pageUrl = `${siteUrl}/project1`;
     } else if (path.includes("/project2")) {
-      title = "Project 2";
-      description = "Description for Project 2.";
+      title = "Project № 2";
+      description = "Brief description of the second project (created by Anatolii Zorin)";
       image = `${siteUrl}/ogimage/project2.jpg`;
       pageUrl = `${siteUrl}/project2`;
     } else if (path.includes("/project3")) {
-      title = "Project 3";
-      description = "Description for Project 3.";
+      title = "Project № 3";
+      description = "Brief description of the third project (created by Anatolii Zorin)";
       image = `${siteUrl}/ogimage/project3.jpg`;
       pageUrl = `${siteUrl}/project3`;
     } else if (path.includes("/about")) {
-      title = "About Us";
-      description = "About this React JS Template.";
+      title = "About";
+      description = "Detailed project information (created by Anatolii Zorin)";
       image = `${siteUrl}/ogimage/about.jpg`;
       pageUrl = `${siteUrl}/about`;
     } else if (path.includes("/404")) {
       title = "Page Not Found";
-      description = "The page you are looking for does not exist.";
+      description = "Page 404 - page not found (created by Anatolii Zorin)";
       image = `${siteUrl}/ogimage/404.jpg`;
       pageUrl = `${siteUrl}/404`;
     }
