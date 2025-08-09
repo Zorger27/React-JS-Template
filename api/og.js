@@ -1,35 +1,34 @@
 export default function handler(req, res) {
   try {
-    const urlPath = req.url || "/";
     const siteUrl = process.env.VITE_SITE_URL || "https://react-js-template.vercel.app";
+    const path = req.url || "/";
 
-    // Главная страница (по умолчанию)
     let title = "React JS Template";
     let description = "Welcome to the React JS Template home page.";
     let image = `${siteUrl}/ogimage/home.jpg`;
     let pageUrl = siteUrl;
 
-    if (urlPath.includes("/project1")) {
+    if (path.includes("/project1")) {
       title = "Project 1";
       description = "Description for Project 1.";
       image = `${siteUrl}/ogimage/project1.jpg`;
       pageUrl = `${siteUrl}/project1`;
-    } else if (urlPath.includes("/project2")) {
+    } else if (path.includes("/project2")) {
       title = "Project 2";
       description = "Description for Project 2.";
       image = `${siteUrl}/ogimage/project2.jpg`;
       pageUrl = `${siteUrl}/project2`;
-    } else if (urlPath.includes("/project3")) {
+    } else if (path.includes("/project3")) {
       title = "Project 3";
       description = "Description for Project 3.";
       image = `${siteUrl}/ogimage/project3.jpg`;
       pageUrl = `${siteUrl}/project3`;
-    } else if (urlPath.includes("/about")) {
+    } else if (path.includes("/about")) {
       title = "About Us";
       description = "About this React JS Template.";
       image = `${siteUrl}/ogimage/about.jpg`;
       pageUrl = `${siteUrl}/about`;
-    } else if (urlPath.includes("/page404") || urlPath.includes("/404")) {
+    } else if (path.includes("/404") || path.includes("/page404")) {
       title = "Page Not Found";
       description = "The page you are looking for does not exist.";
       image = `${siteUrl}/ogimage/page404.jpg`;
@@ -60,12 +59,12 @@ export default function handler(req, res) {
 </body>
 </html>`;
 
-    res.statusCode = 200;
+    res.statusCode = 200; // <-- важно!
     res.setHeader("Content-Type", "text/html; charset=utf-8");
-    res.setHeader("Cache-Control", "public, max-age=3600");
-    res.end(html);
-  } catch (error) {
-    console.error(error);
+    res.setHeader("Cache-Control", "no-cache");
+    res.end(html); // <-- сразу полный HTML
+  } catch (err) {
+    console.error(err);
     res.statusCode = 500;
     res.end("Internal Server Error");
   }
