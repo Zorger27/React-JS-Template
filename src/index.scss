@@ -24,11 +24,21 @@ body {
 table {border-collapse: collapse;}
 
 .fa, .fas {cursor: pointer;}
-.fa.fa-th {color: deepskyblue;}
-.fa.fa-list {color: darkgoldenrod;}
 .fas.fa-arrow-alt-circle-down {color: mediumvioletred;}
 .fas.fa-arrow-alt-circle-up {color: lightseagreen;}
 .fas.fa-hand-pointer {color: red; margin-left: 0.5rem;}
+
+.fa.fa-th {
+  transition: text-shadow .3s ease-in-out;
+  color: deepskyblue;
+  &:hover {text-shadow: 2px 2px 4px black;}
+}
+
+.fa.fa-list {
+  transition: text-shadow .3s ease-in-out;
+  color: darkgoldenrod;
+  &:hover {text-shadow: 2px 2px 4px black;}
+}
 
 @media(max-width:1020px) { .custom-line {width: 100%;} }
 @media(max-width:768px) { .custom-line {width: 100%;} }
