@@ -18,18 +18,9 @@ export default function handler(req, res) {
     // Локализованные данные
     const translations = {
       home: {
-        en: {
-          title: "My Projects (React Vite PWA Template)",
-          desc: "This is the Project's Main Page (created by Anatolii Zorin)"
-        },
-        uk: {
-          title: "Мої проєкти (React Vite PWA Template)",
-          desc: "Це головна сторінка проєкту (створено Анатолієм Зоріним)"
-        },
-        es: {
-          title: "Mis Proyectos (React Vite PWA Template)",
-          desc: "Esta es la página principal del proyecto (creado por Anatolii Zorin)"
-        }
+        en: {title: "My Projects (React Vite PWA Template)", desc: "This is the Project's Main Page (created by Anatolii Zorin)"},
+        uk: {title: "Мої проєкти (React Vite PWA Template)", desc: "Це головна сторінка проєкту (створено Анатолієм Зоріним)"},
+        es: {title: "Mis Proyectos (React Vite PWA Template)", desc: "Esta es la página principal del proyecto (creado por Anatolii Zorin)"}
       },
       project1: {
         en: { title: "Project № 1", desc: "Brief description of the first project (created by Anatolii Zorin)" },
