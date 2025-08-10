@@ -11,7 +11,7 @@ export default function SocialSharing() {
     window.open(
       shareUrl,
       "_blank",
-      "width=600,height=400,resizable=yes,scrollbars=yes,status=yes"
+      "noopener,noreferrer,width=600,height=400,resizable=yes,scrollbars=yes,status=yes"
     );
   };
 
@@ -25,7 +25,7 @@ export default function SocialSharing() {
     window.open(
       shareUrl,
       "_blank",
-      "width=600,height=400,resizable=yes,scrollbars=yes,status=yes"
+      "noopener,noreferrer,width=600,height=400,resizable=yes,scrollbars=yes,status=yes"
     );
   };
 
@@ -36,7 +36,7 @@ export default function SocialSharing() {
     window.open(
       shareUrl,
       "_blank",
-      "width=600,height=400,resizable=yes,scrollbars=yes,status=yes"
+      "noopener,noreferrer,width=600,height=400,resizable=yes,scrollbars=yes,status=yes"
     );
   };
 
