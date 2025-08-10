@@ -14,13 +14,23 @@ export default function SocialSharing() {
   };
 
   const tweetOnExTwitter = () => {
-    const text = encodeURIComponent("Check out this awesome page!😉👍");
+    const text = "Check out this awesome page!😉👍";
+    const hashtags = ["ReactJS", "JavaScript", "WebDev"]; // массив хештегов
+    const via = "Regroz"; // без @
+
     const url = encodeURIComponent(window.location.href);
+    const encodedText = encodeURIComponent(text);
+    const encodedHashtags = encodeURIComponent(hashtags.join(","));
+
+    const shareUrl = `https://x.com/intent/tweet?text=${encodedText}&url=${url}&hashtags=${encodedHashtags}&via=${via}`;
+
     window.open(
-      `https://twitter.com/intent/tweet?text=${text}&url=${url}`,
-      "_blank"
+      shareUrl,
+      "_blank",
+      "width=600,height=400,resizable=yes,scrollbars=yes,status=yes"
     );
   };
+
 
   const shareOnLinkedIn = () => {
     const url = encodeURIComponent(window.location.href);
