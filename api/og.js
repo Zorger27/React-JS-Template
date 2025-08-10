@@ -76,7 +76,7 @@ export default function handler(req, res) {
       pageUrl = `${siteUrl}/404`;
     }
 
-    const { title, desc } = translations[key][lang] || translations[key]["uk"];
+    const { title, desc } = translations[key][lang] || translations[key]["en"];
 
     // Формируем HTML
     const html = `<!DOCTYPE html>
