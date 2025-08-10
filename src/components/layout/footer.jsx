@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import footerLogo from '@/assets/img/menu1/footer-logo1.svg';
 import '@/components/layout/footer.scss';
+import SocialSharing from "@/components/seo/SocialSharing.jsx";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -29,6 +30,7 @@ const Footer = () => {
         <Author />
         <Copyright displayYear={displayYear} isProgYearEqual={isProgYearEqual} />
       </div>
+      <SocialSharing />
     </footer>
   );
 };
