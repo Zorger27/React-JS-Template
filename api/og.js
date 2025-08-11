@@ -3,24 +3,27 @@ export default function handler(req, res) {
     const siteUrl = process.env.VITE_SITE_URL;
     const path = req.url?.split("?")[0] || "/";
 
-    // Достаём язык из query (?lang=uk)
-    const queryParams = new URLSearchParams(req.url.split("?")[1] || "");
-    let lang = queryParams.get("lang");
-
-    // Если в query нет, пробуем заголовок Accept-Language
-    if (!lang) {
-      const acceptLang = req.headers["accept-language"] || "";
-      if (acceptLang.startsWith("uk")) lang = "uk";
-      else if (acceptLang.startsWith("es")) lang = "es";
-      else lang = "en";
-    }
+    // Определяем язык только по Accept-Language
+    const acceptLang = req.headers["accept-language"] || "";
+    let lang = "en";
+    if (acceptLang.startsWith("uk")) lang = "uk";
+    else if (acceptLang.startsWith("es")) lang = "es";
 
     // Локализованные данные
     const translations = {
       home: {
-        en: {title: "My Projects (React Vite PWA Template)", desc: "This is the Project's Main Page (created by Anatolii Zorin)"},
-        uk: {title: "Мої проєкти (React Vite PWA Template)", desc: "Це головна сторінка проєкту (створено Анатолієм Зоріним)"},
-        es: {title: "Mis Proyectos (React Vite PWA Template)", desc: "Esta es la página principal del proyecto (creado por Anatolii Zorin)"}
+        en: {
+          title: "My Projects (React Vite PWA Template)",
+          desc: "This is the Project's Main Page (created by Anatolii Zorin)"
+        },
+        uk: {
+          title: "Мої проєкти (React Vite PWA Template)",
+          desc: "Це головна сторінка проєкту (створено Анатолієм Зоріним)"
+        },
+        es: {
+          title: "Mis Proyectos (React Vite PWA Template)",
+          desc: "Esta es la página principal del proyecto (creado por Anatolii Zorin)"
+        }
       },
       project1: {
         en: { title: "Project № 1", desc: "Brief description of the first project (created by Anatolii Zorin)" },
