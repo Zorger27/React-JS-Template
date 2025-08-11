@@ -24,14 +24,14 @@ export default function handler(req, res) {
     };
 
     // Автор проекта
-    const author = {
-      name: "Anatolii Zorin",
-      url: "https://zorin.expert",
-      social: {
-        github: "https://github.com/zorger27",
-        linkedin: "https://www.linkedin.com/in/anatolii-zorin"
-      }
-    };
+    // const author = {
+    //   name: "Anatolii Zorin",
+    //   url: "https://zorin.expert",
+    //   social: {
+    //     github: "https://github.com/zorger27",
+    //     linkedin: "https://www.linkedin.com/in/anatolii-zorin"
+    //   }
+    // };
 
     const translations = {
       home: {
