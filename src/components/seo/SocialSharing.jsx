@@ -13,10 +13,10 @@ export default function SocialSharing() {
   };
 
   const shareOnFacebook = () => {
-    // const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${getShareUrl()}`;
+    const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${getShareUrl()}`;
 
-    const url = encodeURIComponent(window.location.href);
-    const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+    // const url = encodeURIComponent(window.location.href);
+    // const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
 
     window.open(
       shareUrl,
