@@ -13,7 +13,8 @@ export default function SocialSharing() {
   };
 
   const shareOnFacebook = () => {
-    const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${getShareUrl()}`;
+    // const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${getShareUrl()}`;
+    const shareUrl = `https://www.facebook.com/sharer/sharer.php`;
     window.open(
       shareUrl,
       "_blank",
