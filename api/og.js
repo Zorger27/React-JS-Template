@@ -16,6 +16,23 @@ export default function handler(req, res) {
     // Дефолт на английский
     if (!["en", "uk", "es"].includes(lang)) lang = "en";
 
+    // Мэппинг языков для og:locale
+    const localeMap = {
+      en: "en_US",
+      uk: "uk_UA",
+      es: "es_ES"
+    };
+
+    // Автор проекта
+    const author = {
+      name: "Anatolii Zorin",
+      url: "https://zorin.expert",
+      social: {
+        github: "https://github.com/zorger27",
+        linkedin: "https://www.linkedin.com/in/anatolii-zorin"
+      }
+    };
+
     const translations = {
       home: {
         en: { title: "My Projects (React Vite PWA Template)", desc: "This is the Project's Main Page (created by Anatolii Zorin)" },
@@ -25,7 +42,7 @@ export default function handler(req, res) {
       project1: {
         en: { title: "Project № 1", desc: "Brief description of the first project (created by Anatolii Zorin)" },
         uk: { title: "Проект № 1", desc: "Короткий опис першого проекту (створено Анатолієм Зоріним)" },
-        es: { title: "Proyecto Nº 1", desc: "Breve descripción del primer proyecto (creado por Anatolii Zorin)" }
+        es: { title: "Proyecto Nº 1", desc: "Breve descripción del primer proyecto (creado by Anatolii Zorin)" }
       },
       project2: {
         en: { title: "Project № 2", desc: "Brief description of the second project (created by Anatolii Zorin)" },
@@ -76,6 +93,7 @@ export default function handler(req, res) {
     }
 
     const { title, desc } = translations[key][lang] || translations[key]["en"];
+    const locale = localeMap[lang];
 
     const html = `<!DOCTYPE html>
 <html lang="${lang}">
@@ -89,11 +107,14 @@ export default function handler(req, res) {
 <meta property="og:image" content="${image}" />
 <meta property="og:url" content="${pageUrl}?lang=${lang}" />
 <meta property="og:type" content="website" />
+<meta property="og:locale" content="${locale}" />
 <meta property="og:site_name" content="${siteUrl}" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="${title}" />
 <meta name="twitter:description" content="${desc}" />
 <meta name="twitter:image" content="${image}" />
+<meta name="twitter:creator" content="@regroz" />
+<meta name="twitter:site" content="@regroz" />
 </head>
 <body>
 <h1>${title}</h1>
@@ -105,7 +126,7 @@ export default function handler(req, res) {
     res.setHeader("Content-Type", "text/html; charset=utf-8");
     res.setHeader("Cache-Control", "no-cache");
     res.end(html);
-  } catch {
+  } catch (error) {
     res.statusCode = 500;
     res.setHeader("Content-Type", "text/plain; charset=utf-8");
     res.end("Internal Server Error");
