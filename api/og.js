@@ -5,9 +5,10 @@ export default function handler(req, res) {
     const params = new URLSearchParams(queryString);
     let lang = params.get("lang");
 
+    const acceptLang = req.headers["accept-language"] || "";
+
     // Если параметра нет — пробуем Accept-Language
     if (!lang) {
-      const acceptLang = req.headers["accept-language"] || "";
       if (acceptLang.startsWith("uk")) lang = "uk";
       else if (acceptLang.startsWith("es")) lang = "es";
       else lang = "en";
