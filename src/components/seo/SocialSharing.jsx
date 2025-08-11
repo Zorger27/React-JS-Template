@@ -3,11 +3,17 @@ import { useTranslation } from "react-i18next";
 import "@/components/seo/SocialSharing.scss";
 
 export default function SocialSharing() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language || "en";
+
+  const getShareUrl = () => {
+    const url = new URL(window.location.href);
+    url.searchParams.set("lang", currentLang);
+    return encodeURIComponent(url.toString());
+  };
 
   const shareOnFacebook = () => {
-    const url = encodeURIComponent(window.location.href);
-    const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+    const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${getShareUrl()}`;
     window.open(
       shareUrl,
       "_blank",
@@ -16,12 +22,8 @@ export default function SocialSharing() {
   };
 
   const tweetOnExTwitter = () => {
-    const text = "Check out this awesome page!😉👍";
-    const encodedText = encodeURIComponent(text);
-
-    const url = encodeURIComponent(window.location.href);
-    const shareUrl = `https://x.com/intent/tweet?text=${encodedText}&url=${url}`;
-
+    const text = encodeURIComponent("Check out this awesome page!😉👍");
+    const shareUrl = `https://x.com/intent/tweet?text=${text}&url=${getShareUrl()}`;
     window.open(
       shareUrl,
       "_blank",
@@ -29,10 +31,8 @@ export default function SocialSharing() {
     );
   };
 
-
   const shareOnLinkedIn = () => {
-    const url = encodeURIComponent(window.location.href);
-    const shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+    const shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${getShareUrl()}`;
     window.open(
       shareUrl,
       "_blank",
@@ -41,8 +41,9 @@ export default function SocialSharing() {
   };
 
   const shareLink = () => {
-    const url = window.location.href;
-    const decodedUrl = decodeURIComponent(url);
+    const url = new URL(window.location.href);
+    url.searchParams.set("lang", currentLang);
+    const decodedUrl = decodeURIComponent(url.toString());
 
     navigator.clipboard
       .writeText(decodedUrl)
