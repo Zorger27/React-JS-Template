@@ -19,27 +19,27 @@ export default function handler(req, res) {
     const translations = {
       home: {
         en: { title: "My Projects (React Vite PWA Template)", desc: "This is the Project's Main Page (created by Anatolii Zorin)" },
-        uk: { title: "Мої проекти (React Vite PWA Template)", desc: "Це головна сторінка проєкту (створено Анатолієм Зоріним)" },
+        uk: { title: "Мої проекти (React Vite PWA Template)", desc: "Це головна сторінка проекту (створено Анатолієм Зоріним)" },
         es: { title: "Mis Proyectos (React Vite PWA Template)", desc: "Esta es la página principal del proyecto (creado por Anatolii Zorin)" }
       },
       project1: {
         en: { title: "Project № 1", desc: "Brief description of the first project (created by Anatolii Zorin)" },
-        uk: { title: "Проект № 1", desc: "Короткий опис першого проєкту (створено Анатолієм Зоріним)" },
+        uk: { title: "Проект № 1", desc: "Короткий опис першого проекту (створено Анатолієм Зоріним)" },
         es: { title: "Proyecto Nº 1", desc: "Breve descripción del primer proyecto (creado por Anatolii Zorin)" }
       },
       project2: {
         en: { title: "Project № 2", desc: "Brief description of the second project (created by Anatolii Zorin)" },
-        uk: { title: "Проект № 2", desc: "Короткий опис другого проєкту (створено Анатолієм Зоріним)" },
+        uk: { title: "Проект № 2", desc: "Короткий опис другого проекту (створено Анатолієм Зоріним)" },
         es: { title: "Proyecto Nº 2", desc: "Breve descripción del segundo proyecto (creado por Anatolii Zorin)" }
       },
       project3: {
         en: { title: "Project № 3", desc: "Brief description of the third project (created by Anatolii Zorin)" },
-        uk: { title: "Проект № 3", desc: "Короткий опис третього проєкту (створено Анатолієм Зоріним)" },
+        uk: { title: "Проект № 3", desc: "Короткий опис третього проекту (створено Анатолієм Зоріним)" },
         es: { title: "Proyecto Nº 3", desc: "Breve descripción del tercer proyecto (creado por Anatolii Zorin)" }
       },
       about: {
         en: { title: "About", desc: "Detailed project information (created by Anatolii Zorin)" },
-        uk: { title: "Про проект", desc: "Детальна інформація про проєкт (створено Анатолієм Зоріним)" },
+        uk: { title: "Про проект", desc: "Детальна інформація про проект (створено Анатолієм Зоріним)" },
         es: { title: "Sobre", desc: "Información detallada del proyecto (creado por Anatolii Zorin)" }
       },
       page404: {
