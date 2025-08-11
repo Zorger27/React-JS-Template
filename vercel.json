@@ -17,6 +17,16 @@
       ]
     },
     {
+      "source": "/",
+      "destination": "/api/og",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang"
+        }
+      ]
+    },
+    {
       "source": "/((?!api|ogimage|_next|favicon\\.ico|robots\\.txt|sitemap\\.xml).*)",
       "destination": "/api/og",
       "has": [
@@ -24,6 +34,16 @@
           "type": "header",
           "key": "user-agent",
           "value": ".*(bot|crawler|spider|crawling|facebookexternalhit|twitterbot|linkedinbot|slackbot|whatsapp|telegram|pinterest|discord|facebot).*"
+        }
+      ]
+    },
+    {
+      "source": "/((?!api|ogimage|_next|favicon\\.ico|robots\\.txt|sitemap\\.xml).*)",
+      "destination": "/api/og",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang"
         }
       ]
     },
