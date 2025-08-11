@@ -22,7 +22,7 @@ export default function SocialSharing() {
   };
 
   const tweetOnExTwitter = () => {
-    const text = encodeURIComponent("Check out this awesome page!😉👍");
+    const text = encodeURIComponent(t("footer.socialSharing.tweetText"));
     const shareUrl = `https://x.com/intent/tweet?text=${text}&url=${getShareUrl()}`;
     window.open(
       shareUrl,
