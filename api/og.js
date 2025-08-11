@@ -1,29 +1,26 @@
 export default function handler(req, res) {
   try {
     const siteUrl = process.env.VITE_SITE_URL;
-    const path = req.url?.split("?")[0] || "/";
+    const [pathOnly, queryString] = (req.url || "/").split("?");
+    const params = new URLSearchParams(queryString);
+    let lang = params.get("lang");
 
-    // Определяем язык только по Accept-Language
-    const acceptLang = req.headers["accept-language"] || "";
-    let lang = "en";
-    if (acceptLang.startsWith("uk")) lang = "uk";
-    else if (acceptLang.startsWith("es")) lang = "es";
+    // Если параметра нет — пробуем Accept-Language
+    if (!lang) {
+      const acceptLang = req.headers["accept-language"] || "";
+      if (acceptLang.startsWith("uk")) lang = "uk";
+      else if (acceptLang.startsWith("es")) lang = "es";
+      else lang = "en";
+    }
 
-    // Локализованные данные
+    // Дефолт на английский
+    if (!["en", "uk", "es"].includes(lang)) lang = "en";
+
     const translations = {
       home: {
-        en: {
-          title: "My Projects (React Vite PWA Template)",
-          desc: "This is the Project's Main Page (created by Anatolii Zorin)"
-        },
-        uk: {
-          title: "Мої проєкти (React Vite PWA Template)",
-          desc: "Це головна сторінка проєкту (створено Анатолієм Зоріним)"
-        },
-        es: {
-          title: "Mis Proyectos (React Vite PWA Template)",
-          desc: "Esta es la página principal del proyecto (creado por Anatolii Zorin)"
-        }
+        en: { title: "My Projects (React Vite PWA Template)", desc: "This is the Project's Main Page (created by Anatolii Zorin)" },
+        uk: { title: "Мої проєкти (React Vite PWA Template)", desc: "Це головна сторінка проєкту (створено Анатолієм Зоріним)" },
+        es: { title: "Mis Proyectos (React Vite PWA Template)", desc: "Esta es la página principal del proyecto (creado por Anatolii Zorin)" }
       },
       project1: {
         en: { title: "Project № 1", desc: "Brief description of the first project (created by Anatolii Zorin)" },
@@ -52,28 +49,27 @@ export default function handler(req, res) {
       }
     };
 
-    // Определяем ключ страницы и картинку
     let key = "home";
     let image = `${siteUrl}/ogimage/home.jpg`;
     let pageUrl = siteUrl;
 
-    if (path.includes("/project1")) {
+    if (pathOnly.includes("/project1")) {
       key = "project1";
       image = `${siteUrl}/ogimage/project1.jpg`;
       pageUrl = `${siteUrl}/project1`;
-    } else if (path.includes("/project2")) {
+    } else if (pathOnly.includes("/project2")) {
       key = "project2";
       image = `${siteUrl}/ogimage/project2.jpg`;
       pageUrl = `${siteUrl}/project2`;
-    } else if (path.includes("/project3")) {
+    } else if (pathOnly.includes("/project3")) {
       key = "project3";
       image = `${siteUrl}/ogimage/project3.jpg`;
       pageUrl = `${siteUrl}/project3`;
-    } else if (path.includes("/about")) {
+    } else if (pathOnly.includes("/about")) {
       key = "about";
       image = `${siteUrl}/ogimage/about.jpg`;
       pageUrl = `${siteUrl}/about`;
-    } else if (path.includes("/404")) {
+    } else if (pathOnly.includes("/404")) {
       key = "page404";
       image = `${siteUrl}/ogimage/404.jpg`;
       pageUrl = `${siteUrl}/404`;
@@ -81,7 +77,6 @@ export default function handler(req, res) {
 
     const { title, desc } = translations[key][lang] || translations[key]["en"];
 
-    // Формируем HTML
     const html = `<!DOCTYPE html>
 <html lang="${lang}">
 <head>
@@ -92,7 +87,7 @@ export default function handler(req, res) {
 <meta property="og:title" content="${title}" />
 <meta property="og:description" content="${desc}" />
 <meta property="og:image" content="${image}" />
-<meta property="og:url" content="${pageUrl}" />
+<meta property="og:url" content="${pageUrl}?lang=${lang}" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="${siteUrl}" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -110,7 +105,7 @@ export default function handler(req, res) {
     res.setHeader("Content-Type", "text/html; charset=utf-8");
     res.setHeader("Cache-Control", "no-cache");
     res.end(html);
-  } catch (err) {
+  } catch {
     res.statusCode = 500;
     res.setHeader("Content-Type", "text/plain; charset=utf-8");
     res.end("Internal Server Error");
