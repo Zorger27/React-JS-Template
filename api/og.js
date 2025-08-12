@@ -71,38 +71,38 @@ export default function handler(req, res) {
     let image;
     let pageUrl;
 
-    if (pathOnly.trim() === "/" || pathOnly.trim() === "") {
-      // Главная страница
+    const cleanPath = pathOnly.trim().replace(/\/+$/, "");
+
+    if (cleanPath === "" || cleanPath === "/") {
       key = "home";
       image = `${siteUrl}/ogimage/home.jpg`;
       pageUrl = siteUrl;
-    } else if (pathOnly.includes("/project1")) {
+    } else if (cleanPath === "/project1") {
       key = "project1";
       image = `${siteUrl}/ogimage/project1.jpg`;
       pageUrl = `${siteUrl}/project1`;
-    } else if (pathOnly.includes("/project2")) {
+    } else if (cleanPath === "/project2") {
       key = "project2";
       image = `${siteUrl}/ogimage/project2.jpg`;
       pageUrl = `${siteUrl}/project2`;
-    } else if (pathOnly.includes("/project3")) {
+    } else if (cleanPath === "/project3") {
       key = "project3";
       image = `${siteUrl}/ogimage/project3.jpg`;
       pageUrl = `${siteUrl}/project3`;
-    } else if (pathOnly.includes("/about")) {
+    } else if (cleanPath === "/about") {
       key = "about";
       image = `${siteUrl}/ogimage/about.jpg`;
       pageUrl = `${siteUrl}/about`;
-    } else if (pathOnly.includes("/404")) {
+    } else if (cleanPath === "/404") {
       key = "page404";
       image = `${siteUrl}/ogimage/404.jpg`;
       pageUrl = `${siteUrl}/404`;
     } else {
-      // Любой другой путь — 404
+      // Всё остальное — 404
       key = "page404";
       image = `${siteUrl}/ogimage/404.jpg`;
       pageUrl = `${siteUrl}/404`;
     }
-
 
     const { title, desc } = translations[key][lang] || translations[key]["en"];
     const locale = localeMap[lang];
