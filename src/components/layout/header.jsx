@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import headerLogo from '@/assets/img/menu1/header-logo1.svg';
+import headerAbout from '@/assets/img/menu1/header-about1.svg'
 import './header.scss';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '@/components/util/LanguageSwitcher.jsx'
@@ -39,6 +40,12 @@ const Header = () => {
         <div className="logo">
           <Link to="/">
             <img src={headerLogo} alt="Логотип" className="logo" title={t('header.headerImage')}/>
+          </Link>
+        </div>
+
+        <div className="header-about">
+          <Link to="/about">
+            <img src={headerAbout} alt="Ссылка на About" className="header-about" title="Ссылка на About"/>
           </Link>
         </div>
 
