@@ -43,7 +43,7 @@ export default function handler(req, res) {
       project1: {
         en: { title: "Project № 1", desc: "Brief description of the first project (created by Anatolii Zorin)" },
         uk: { title: "Проект № 1", desc: "Короткий опис першого проекту (створено Анатолієм Зоріним)" },
-        es: { title: "Proyecto Nº 1", desc: "Breve descripción del primer proyecto (creado by Anatolii Zorin)" }
+        es: { title: "Proyecto Nº 1", desc: "Breve descripción del primer proyecto (creado por Anatolii Zorin)" }
       },
       project2: {
         en: { title: "Project № 2", desc: "Brief description of the second project (created by Anatolii Zorin)" },
@@ -67,11 +67,16 @@ export default function handler(req, res) {
       }
     };
 
-    let key = "home";
-    let image = `${siteUrl}/ogimage/home.jpg`;
-    let pageUrl = siteUrl;
+    let key;
+    let image;
+    let pageUrl;
 
-    if (pathOnly.includes("/project1")) {
+    if (pathOnly.trim() === "/" || pathOnly.trim() === "") {
+      // Главная страница
+      key = "home";
+      image = `${siteUrl}/ogimage/home.jpg`;
+      pageUrl = siteUrl;
+    } else if (pathOnly.includes("/project1")) {
       key = "project1";
       image = `${siteUrl}/ogimage/project1.jpg`;
       pageUrl = `${siteUrl}/project1`;
@@ -91,7 +96,13 @@ export default function handler(req, res) {
       key = "page404";
       image = `${siteUrl}/ogimage/404.jpg`;
       pageUrl = `${siteUrl}/404`;
+    } else {
+      // Любой другой путь — 404
+      key = "page404";
+      image = `${siteUrl}/ogimage/404.jpg`;
+      pageUrl = `${siteUrl}/404`;
     }
+
 
     const { title, desc } = translations[key][lang] || translations[key]["en"];
     const locale = localeMap[lang];
