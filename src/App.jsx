@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import {BrowserRouter as Router, Routes, Route, useLocation, Navigate} from 'react-router-dom';
 import { HelmetProvider } from '@dr.pogodin/react-helmet';
-import StaticBypass from "@/components/util/StaticBypass.jsx";
 import Canonical from '@/components/seo/Canonical.jsx';
 // import GoogleAnalytics from '@/components/seo/GoogleAnalytics.jsx';
 // import GoogleSiteVerification from '@/components/seo/GoogleSiteVerification.jsx';
@@ -20,7 +19,6 @@ import '@/App.scss';
 const AppLayout = () => {
   const location = useLocation();
   const isNotFound = location.pathname.startsWith('/404');
-  const isOgImage = location.pathname.startsWith('/ogimage/');
   const routeKey = location.pathname;
 
   const [isFooterHidden, setIsFooterHidden] = useState(false);
@@ -51,10 +49,9 @@ const AppLayout = () => {
         {/*<GoogleAnalytics id={import.meta.env.VITE_GOOGLE_ANALYTICS_ID} />*/}
         {/*<GoogleSiteVerification code={import.meta.env.VITE_GOOGLE_SITE_VERIFICATION_CODE} />*/}
 
-        {!isNotFound && !isOgImage && <Header />}
+        {!isNotFound && <Header />}
         <main className="main">
           <Routes>
-            <Route path="/ogimage/:filename" element={<StaticBypass />}/>
             <Route path="/" element={<Home />} />
             <Route path="/project1" element={<Project1 />} />
             <Route path="/project2" element={<Project2 />} />
@@ -67,7 +64,7 @@ const AppLayout = () => {
 
           </Routes>
         </main>
-        {!isNotFound && !isOgImage && !isFooterHidden && <Footer />}
+        {!isNotFound && !isFooterHidden && <Footer />}
       </div>
     </FooterContext.Provider>
   );
