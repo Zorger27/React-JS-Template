@@ -12,7 +12,7 @@ header {
   box-shadow: 0 2px 4px grey;
 
   .header-img {
-    //margin: 0.3rem;
+    margin: 0.3rem 0;
     display: grid;
     grid-template-columns: 1fr 1fr 2fr 1fr;
     grid-template-rows: auto;
@@ -148,6 +148,7 @@ header {
   header {
     justify-content: center;
     .header-img {
+      margin: 0.3rem 0;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-template-rows: auto;
