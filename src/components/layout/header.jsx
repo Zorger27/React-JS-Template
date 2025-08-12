@@ -45,7 +45,7 @@ const Header = () => {
 
         <div className="header-about">
           <Link to="/about">
-            <img src={headerAbout} alt="Ссылка на About" className="header-about" title="Ссылка на About"/>
+            <img src={headerAbout} alt="Ссылка на About" className="header-about" title={t('header.headerAbout')}/>
           </Link>
         </div>
 
