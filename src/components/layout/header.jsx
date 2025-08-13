@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectHeaderLogo, selectHeaderAbout } from '@/store/view/viewSlice.js';
 import { Link } from 'react-router-dom';
-import './header.scss';
+import '@/components/layout/header.scss';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '@/components/util/LanguageSwitcher.jsx'
 import ToggleFullScreen from "@/components/util/ToggleFullScreen.jsx";

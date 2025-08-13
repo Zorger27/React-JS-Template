@@ -2,7 +2,6 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleView, selectFooterLogo } from '@/store/view/viewSlice.js';
 import { useTranslation } from 'react-i18next';
-// import footerLogo from '@/assets/img/menu1/footer-logo1.svg';
 import '@/components/layout/footer.scss';
 import SocialSharing from "@/components/seo/SocialSharing.jsx";
 
@@ -15,10 +14,6 @@ const Footer = () => {
 
   const handleClick = () => {dispatch(toggleView());};
 
-  const navigateToPortfolio = () => {
-    window.open('https://zorin.expert', '_blank');
-  };
-
   const displayYear =
     progYear && progYear !== currentYear
       ? `${progYear}–${currentYear}`
@@ -29,7 +24,6 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-logo" onClick={handleClick}>
-      {/*<div className="footer-logo" onClick={navigateToPortfolio}>*/}
         <img src={footerLogo} title={t('footer.footerLogo')} alt="Footer Logo Image" />
       </div>
 
@@ -47,7 +41,7 @@ const Author = () => {
   const { t } = useTranslation();
   return (
     <div className="author">
-      {t('footer.develop')} <b><a href="https://zorger27.github.io" title={t('footer.linkCV')} target="_blank" rel="noopener noreferrer">{t('footer.zorger')}</a>{t('footer.point')}</b>
+      {t('footer.develop')} <b><a href="https://zorin.expert" title={t('footer.portfolio')} target="_blank" rel="noopener noreferrer">{t('footer.zorger')}</a>{t('footer.point')}</b>
     </div>
   );
 };
