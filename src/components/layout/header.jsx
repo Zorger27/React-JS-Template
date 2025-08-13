@@ -1,13 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { selectHeaderLogo, selectHeaderAbout } from '@/store/view/viewSlice.js';
 import { Link } from 'react-router-dom';
-import headerLogo from '@/assets/img/menu1/header-logo1.svg';
-import headerAbout from '@/assets/img/menu1/header-about1.svg'
 import './header.scss';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '@/components/util/LanguageSwitcher.jsx'
 import ToggleFullScreen from "@/components/util/ToggleFullScreen.jsx";
 
 const Header = () => {
+  const headerLogo = useSelector(selectHeaderLogo);
+  const headerAbout = useSelector(selectHeaderAbout);
   const { t } = useTranslation();
   const [showMenu, setShowMenu] = useState(false);
   const burgerRef = useRef(null);
