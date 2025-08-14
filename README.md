@@ -3,7 +3,7 @@
 ### You can view my CV here: [Curriculum VITAE](https://zorger27.github.io)❗️ ###
 ### You can view my Portfolio here: [My Portfolio](https://Zorin.Expert)❗️ ###
 
-<img width="1680" alt="about" src="https://github.com/user-attachments/assets/2bf3eb8b-2689-444d-9c39-71f17c736d02" />
+![Screen](https://github.com/user-attachments/assets/9fa2d73c-955c-4171-b5e1-6b537ad2eabf)
 
 #### A sleek, flexible, and production-ready starter template for building modern single-page applications (SPA) using the latest React 19 and the ultra-fast Vite build tool. ####
 
