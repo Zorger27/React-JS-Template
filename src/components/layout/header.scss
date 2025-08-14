@@ -130,9 +130,7 @@ header {
 
 @media(max-width: 1020px) {
   header {
-    .header-img {
-      margin: 0.5rem 0;
-    }
+    .header-img {margin: 0.5rem 0;}
     .menu {
       a {
         margin-right: 6px;
@@ -148,7 +146,7 @@ header {
   header {
     justify-content: center;
     .header-img {
-      margin: 0.3rem 0;
+      margin: 0.5rem 0;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-template-rows: auto;
