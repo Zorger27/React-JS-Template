@@ -61,13 +61,31 @@ export default defineConfig(({ mode }) => {
       Sitemap({
         hostname: siteUrl,
         dynamicRoutes: [
-          '/',
           '/about',
           '/project1',
           '/project2',
           '/project3'
         ],
-        readable: true
+        exclude: [
+          // можно явно указать, например, "/404" или пути, которые не должны быть в sitemap
+        ],
+        readable: true,
+        changefreq: {
+          '/': 'daily',
+          '/about': 'monthly',
+          '/project1': 'weekly',
+          '/project2': 'weekly',
+          '/project3': 'weekly',
+        },
+        priority: {
+          '/': 1.0,
+          '/about': 0.8,
+          '/project1': 0.6,
+          '/project2': 0.6,
+          '/project3': 0.6,
+        },
+        lastmod: new Date(), // или можно задать вручную
+        generateRobotsTxt: true
       })
     ],
     resolve: {
