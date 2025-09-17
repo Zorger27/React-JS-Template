@@ -55,6 +55,16 @@ export default function handler(req, res) {
         uk: { title: "Проект № 3", desc: "Короткий опис третього проекту (створено Анатолієм Зоріним)" },
         es: { title: "Proyecto Nº 3", desc: "Breve descripción del tercer proyecto (creado por Anatolii Zorin)" }
       },
+      project4: {
+        en: { title: "Project № 4", desc: "Brief description of the fourth project (created by Anatolii Zorin)" },
+        uk: { title: "Проект № 4", desc: "Короткий опис четвертого проекту (створено Анатолієм Зоріним)" },
+        es: { title: "Proyecto Nº 4", desc: "Breve descripción del cuarto proyecto (creado por Anatolii Zorin)" }
+      },
+      project5: {
+        en: { title: "Project № 5", desc: "Brief description of the fifth project (created by Anatolii Zorin)" },
+        uk: { title: "Проект № 5", desc: "Короткий опис п’ятого проекту (створено Анатолієм Зоріним)" },
+        es: { title: "Proyecto Nº 5", desc: "Breve descripción del quinto proyecto (creado por Anatolii Zorin)" }
+      },
       about: {
         en: { title: "About", desc: "Detailed project information (created by Anatolii Zorin)" },
         uk: { title: "Про проект", desc: "Детальна інформація про проект (створено Анатолієм Зоріним)" },
@@ -89,6 +99,14 @@ export default function handler(req, res) {
       key = "project3";
       image = `${siteUrl}/ogimage/project3.jpg`;
       pageUrl = `${siteUrl}/project3`;
+    } else if (cleanPath === "/project4") {
+      key = "project4";
+      image = `${siteUrl}/ogimage/project4.jpg`;
+      pageUrl = `${siteUrl}/project4`;
+    } else if (cleanPath === "/project5") {
+      key = "project5";
+      image = `${siteUrl}/ogimage/project5.jpg`;
+      pageUrl = `${siteUrl}/project5`;
     } else if (cleanPath === "/about") {
       key = "about";
       image = `${siteUrl}/ogimage/about.jpg`;

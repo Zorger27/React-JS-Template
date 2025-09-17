@@ -17,12 +17,13 @@ export const About = () => {
 
   return (
     <div className="about">
+
       <Helmet>
-        <title>{t('about.nameOG')}</title>
+        <title>{t('about.name')}</title>
         <meta name="description" content={t('about.disc')} />
 
         {/* Open Graph meta tags */}
-        <meta property="og:title" content={t('about.nameOG')} />
+        <meta property="og:title" content={t('about.name')} />
         <meta property="og:description" content={t('about.disc')} />
         <meta property="og:image" content={`${siteUrl}/ogimage/about.jpg`} />
         <meta property="og:url" content={`${siteUrl}/about`} />
@@ -30,11 +31,12 @@ export const About = () => {
         <meta property="og:site_name" content={siteUrl} />
 
         {/* Twitter meta tags */}
-        <meta property="twitter:title" content={t('about.nameOG')} />
+        <meta property="twitter:title" content={t('about.name')} />
         <meta property="twitter:description" content={t('about.disc')} />
         <meta property="twitter:image" content={`${siteUrl}/ogimage/about.jpg`} />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
+
       <div className="container">
         <h1>
           {t('about.title')}
