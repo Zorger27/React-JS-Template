@@ -11,6 +11,8 @@ import Home from '@/pages/menu/Home.jsx';
 import { Project1 } from '@/pages/menu/Project1.jsx';
 import { Project2 } from '@/pages/menu/Project2.jsx';
 import { Project3 } from '@/pages/menu/Project3.jsx';
+import { Project4 } from '@/pages/menu/Project4.jsx';
+import { Project5 } from '@/pages/menu/Project5.jsx';
 import { About    } from '@/pages/menu/About.jsx';
 import PageNotFound from '@/pages/service/PageNotFound.jsx';
 import '@/App.scss';
@@ -54,6 +56,8 @@ const AppLayout = () => {
             <Route path="/project1" element={<Project1 />} />
             <Route path="/project2" element={<Project2 />} />
             <Route path="/project3" element={<Project3 />} />
+            <Route path="/project4" element={<Project4 />} />
+            <Route path="/project5" element={<Project5 />} />
             <Route path="/about" element={<About />} />
             <Route path="/404" element={<PageNotFound />} />
 

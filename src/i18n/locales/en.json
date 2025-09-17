@@ -6,11 +6,7 @@
   },
   "header": {
     "headerImage": "Main menu! \uD83D\uDE0D",
-    "headerAbout": "Go to About page",
-    "prg01": "Project-1",
-    "prg02": "Project-2",
-    "prg03": "Project-3",
-    "about": "About"
+    "headerAbout": "Go to About page"
   },
   "footer": {
     "develop": "Developed by ",
@@ -31,6 +27,8 @@
   "home": {
     "title": "Welcome!",
     "description": "Here are my React projects and information about them. \uD83D\uDE09",
+    "main": "Main",
+    "projects": "Projects",
     "name": "My Projects",
     "disc": "This is the Project's Main Page"
   },
@@ -46,6 +44,14 @@
     "name": "Project № 3",
     "disc": "Brief description of the third project"
   },
+  "project4": {
+    "name": "Project № 4",
+    "disc": "Brief description of the fourth project"
+  },
+  "project5": {
+    "name": "Project № 5",
+    "disc": "Brief description of the fifth project"
+  },
   "about": {
     "title": "My JavaScript projects on React",
     "more01": "More information...",
@@ -54,9 +60,9 @@
     "more04": "\uD83D\uDE80 With its intuitive structure and flexible codebase, this template is ideal for both rapid project launches and the development of complex web applications! \uD83C\uDF1F",
     "more05": "Welcome! \uD83E\uDD29\uD83D\uDE0E",
     "technologies": "The used technologies",
-    "name": "Name",
+    "name-prg": "Name",
     "version": "Version",
-    "nameOG": "About",
+    "name": "About",
     "disc": "Detailed project information"
   },
   "page404": {
@@ -64,10 +70,6 @@
     "disc": "Page 404 - page not found",
     "info404": "Page not found, back to main page",
     "btn404": "Back to MAIN page"
-  },
-  "page": {
-    "name": "Page",
-    "disc": "A Progressive Web App built with React and Vite"
   },
   "extra": {
     "loading": "Loading...",

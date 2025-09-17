@@ -6,11 +6,7 @@
   },
   "header": {
     "headerImage": "¡Menú principal! \uD83D\uDE0D",
-    "headerAbout": "Ir a la página Sobre",
-    "prg01": "Proyecto-1",
-    "prg02": "Proyecto-2",
-    "prg03": "Proyecto-3",
-    "about": "Sobre"
+    "headerAbout": "Ir a la página Sobre"
   },
   "footer": {
     "develop": "Desarrollado por ",
@@ -31,6 +27,8 @@
   "home": {
     "title": "¡Bienvenido!",
     "description": "Aquí están mis proyectos React e información sobre ellos. \uD83D\uDE09",
+    "main": "Principal",
+    "projects": "Proyectos",
     "name": "Mis proyectos",
     "disc": "Esta es la página principal del proyecto"
   },
@@ -46,6 +44,14 @@
     "name": "Proyecto № 3",
     "disc": "Breve descripción del tercer proyecto"
   },
+  "project4": {
+    "name": "Proyecto № 4",
+    "disc": "Breve descripción del cuarto proyecto"
+  },
+  "project5": {
+    "name": "Proyecto № 5",
+    "disc": "Breve descripción del quinto proyecto"
+  },
   "about": {
     "title": "Mis proyectos de JavaScript en React",
     "more01": "Más información...",
@@ -54,9 +60,9 @@
     "more04": "\uD83D\uDE80 Gracias a su estructura intuitiva y código flexible, esta plantilla es perfecta tanto para lanzamientos rápidos de nuevos proyectos como para el desarrollo de aplicaciones web complejas. \uD83C\uDF1F",
     "more05": "¡Bienvenido! \uD83E\uDD29\uD83D\uDE0E",
     "technologies": "Las tecnologías utilizadas",
-    "name": "Nombre",
+    "name-prg": "Nombre",
     "version": "Versión",
-    "nameOG": "Sobre",
+    "name": "Sobre",
     "disc": "Información detallada del proyecto"
   },
   "page404": {
@@ -64,10 +70,6 @@
     "disc": "Página 404 - página no encontrada",
     "info404": "Página no encontrada, volver a la página principal",
     "btn404": "Volver a la página PRINCIPAL"
-  },
-  "page": {
-    "name": "Página",
-    "disc": "Una aplicación web progresiva creada con React y Vite"
   },
   "extra": {
     "loading": "Cargando...",

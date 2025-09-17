@@ -77,7 +77,7 @@ export const About = () => {
                   </tr>
                   <tr>
                     <th>№</th>
-                    <th>{t('about.name')}</th>
+                    <th>{t('about.name-prg')}</th>
                     <th>{t('about.version')}</th>
                   </tr>
                   </thead>
