@@ -2,9 +2,9 @@ import React from 'react';
 import '@/pages/menu/Project5.scss';
 import { useTranslation } from 'react-i18next';
 import {Link} from "react-router-dom";
-import {Helmet} from "@dr.pogodin/react-helmet";
 import {useSpaCleanup} from "@/hooks/useSpaCleanup.js";
 import ToggleFooterButton from "@/components/util/ToggleFooterButton.jsx";
+import MetaTags from "@/components/seo/MetaTags.jsx";
 
 export const Project5 = () => {
   const { t } = useTranslation();
@@ -14,24 +14,28 @@ export const Project5 = () => {
 
   return (
     <div className="project5">
-      <Helmet>
-        <title>{t('project5.name')}</title>
-        <meta name="description" content={t('project5.disc')} />
 
-        {/* Open Graph meta tags */}
-        <meta property="og:title" content={t('project5.name')} />
-        <meta property="og:description" content={t('project5.disc')} />
-        <meta property="og:image" content={`${siteUrl}/ogimage/project5.jpg`} />
-        <meta property="og:url" content={`${siteUrl}/project5`} />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content={siteUrl} />
+      <MetaTags
+        mainTitle={t('project5.name')}
+        metaTags={[
+          { name: "description", content: t('project5.disc') },
 
-        {/* Twitter meta tags */}
-        <meta property="twitter:title" content={t('project5.name')} />
-        <meta property="twitter:description" content={t('project5.disc')} />
-        <meta property="twitter:image" content={`${siteUrl}/ogimage/project5.jpg`} />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Helmet>
+          // Open Graph meta tags
+          { property: "og:title", content: t('project5.name') },
+          { property: "og:description", content: t('project5.disc') },
+          { property: "og:image", content: `${siteUrl}/ogimage/project5.jpg` },
+          { property: "og:url", content: `${siteUrl}/project5` },
+          { property: "og:type", content: "website" },
+          { property: "og:site_name", content: `${siteUrl}` },
+
+          // Twitter meta tags
+          { property: "twitter:title", content: t('project5.name') },
+          { property: "twitter:description", content: t('project5.disc') },
+          { property: "twitter:image", content: `${siteUrl}/ogimage/project5.jpg` },
+          { name: "twitter:card", content: "summary_large_image" },
+        ]}
+      />
+
       <div className="container">
         <h1><Link to="/" className="back-to-menu" title={t('extra.back')}>
           <i className="fa fa-arrow-circle-left"></i></Link>
