@@ -12,7 +12,7 @@ export default defineConfig({
       react(),
       VitePWA({
         registerType: 'autoUpdate',
-        devOptions: {enabled: false},
+        devOptions: { enabled: false },
         workbox: {
           // какие файлы собираемся кешировать
           globPatterns: ['**/*.{js,css,html,ico,png,svg,txt}'],
