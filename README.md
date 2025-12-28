@@ -15,7 +15,7 @@
 ✅ Performance tracking — pre-configured for Google Analytics and Search Console.
 
 🛠️ <ins>Technologies:</ins><br>
-🔹 React 19 — modern UI development.<br>
+🔹 React — modern UI development.<br>
 🔹 Redux Toolkit — efficient and scalable state management.<br>
 🔹 React i18next — seamless internationalization.<br>
 🔹 JavaScript (ESNext) — dynamic, maintainable code.<br>
